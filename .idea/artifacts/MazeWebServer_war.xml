@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="MazeWebServer:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/MazeWebServer_war</output-path>
+    <root id="archive" name="MazeWebServer_war.war">
+      <element id="artifact" artifact-name="MazeWebServer:war exploded" />
+    </root>
+  </artifact>
+</component>
