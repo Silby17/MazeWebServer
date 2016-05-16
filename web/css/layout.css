@@ -92,6 +92,7 @@ button {
     margin-right: 24px;
 }
 
+
 button:hover {
     background: url(../images/login_hover.png) no-repeat;
     width: 82px;
