@@ -1,14 +1,17 @@
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import java.io.*;
 
 /******************************************************************************
  * This Class will initialize the Contexts and add attributes that will be
  * able to be accessed throughout the application
  *****************************************************************************/
-public class MyServletContextListener implements ServletContextListener {
+public class MyServletContextManager implements ServletContextListener {
     private DBManager dbManager;
     private ServerConnectionManager serverManager;
+    private String IP;
+    private int PORT;
 
 
     /*************************************************************************
@@ -18,8 +21,10 @@ public class MyServletContextListener implements ServletContextListener {
      ************************************************************************/
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
+        System.out.println("Context Created");
+        readConfigInfo();
         ServletContext context = servletContextEvent.getServletContext();
-        serverManager = new ServerConnectionManager("127.0.0.1", 80);
+        serverManager = new ServerConnectionManager(IP, PORT);
         this.dbManager = new DBManager();
         context.setAttribute("database", dbManager);
         context.setAttribute("connection", serverManager);
@@ -35,5 +40,23 @@ public class MyServletContextListener implements ServletContextListener {
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
         System.out.println("Context destroyed");
+    }
+
+
+    /*******************************************************************
+     * This method will read the IP and PORT from the cinfig.txt file
+     * for connection with the server
+     ******************************************************************/
+    private void readConfigInfo(){
+        InputStream in = getClass().getResourceAsStream("config.txt");
+        Reader nr = null;
+        BufferedReader br = null;
+        try{
+            br = new BufferedReader(new InputStreamReader(in));
+            IP = br.readLine();
+            PORT = Integer.parseInt(br.readLine());
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }
