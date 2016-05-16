@@ -30,6 +30,10 @@ public class MyFormServlet extends HttpServlet {
             HttpSession session = request.getSession();
             response.sendRedirect("/MainMenuServlet");
         }
+        else{
+            request.setAttribute("error", true);
+            request.getRequestDispatcher("login.jsp").forward(request, response);
+        }
         /**
         if(manager.checkLoginDetails(userName, password))
         {
