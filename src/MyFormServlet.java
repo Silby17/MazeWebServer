@@ -1,3 +1,4 @@
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,11 +21,17 @@ public class MyFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        if (request.getParameter("username").equals("admin") &&
-                request.getParameter("password").equals("admin")) {
+        ServletContext context = getServletContext();
+        Object att = context.getAttribute("database");
+        DBManager manager = (DBManager)att;
+        String userName = request.getParameter("username");
+        String password = request.getParameter("password");
+        if(manager.checkLoginDetails(userName, password))
+        {
             HttpSession session = request.getSession();
             response.sendRedirect("secured/MyPrivateData");
-        } else {
+        }
+        else {
             request.setAttribute("error", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
