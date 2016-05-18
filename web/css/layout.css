@@ -84,29 +84,16 @@ input[type="text"]:focus, input[type="password"]:focus {
 }
 
 button {
-    background: url(../images/login.png) no-repeat;
+    background: url(../images/btnblankBlue.png) no-repeat;
     width: 82px;
-    height: 32px;
+    height: 39px;
     border: 0px;
     float: right;
     margin-right: 24px;
+    font-size: 120%;
 }
 
 
-
-button:hover {
-    background: url(../images/login_hover.png) no-repeat;
-    width: 82px;
-    height: 32px;
-    border: 0px;
-}
-
-button:active {
-    background: url(../images/login_active.png) no-repeat;
-    width: 82px;
-    height: 32px;
-    border: 0px;
-}
 
 label {
     display: inline;
@@ -140,4 +127,8 @@ p.forgot a {
 
 p.forgot a:hover {
     color: #65c4e5;
+}
+
+.imgContainer{
+    float: left;
 }

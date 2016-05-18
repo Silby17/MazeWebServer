@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/layout.css">
+
 </head>
 <body>
 <div class="container">
@@ -21,8 +22,15 @@
             <p><input type="password" placeholder="Password" name="password"></p>
             <p><input type="text" placeholder="Name" name="name"></p>
             <p><input type="text" placeholder="Email" name="email"></p>
-            <p><input type="text" placeholder="icon" name="icon"></p>
-            <button type="submit"></button>
+            <p><div style="float: left">
+            <map name="iconMap">
+                <area coords="0, 0, 69, 69" alt=""/>
+            </map>
+                <img src="images/Icons/panda.png" name="panda">
+                <img src="images/Icons/redFace.png" name="redFace">
+                <img src="images/Icons/redNOse.png" name="redNode">
+            </div>
+            <button type="submit" >Submit</button>
         </form>
     </div>
 </div>
