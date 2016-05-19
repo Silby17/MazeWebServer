@@ -5,18 +5,18 @@
          version="3.1">
 
     <listener>
-        <listener-class>MyServletContextManager</listener-class>
+        <listener-class>ServletContextManager</listener-class>
     </listener>
 
     <welcome-file-list>
-        <welcome-file>MyFormServlet</welcome-file>
+        <welcome-file>LoginServlet</welcome-file>
     </welcome-file-list>
     <servlet>
-        <servlet-name>MyServlet</servlet-name>
-        <servlet-class>MyFormServlet</servlet-class>
+        <servlet-name>MainMenuServlet</servlet-name>
+        <servlet-class>LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>MyServlet</servlet-name>
+        <servlet-name>MainMenuServlet</servlet-name>
         <url-pattern>/NiceName</url-pattern>
     </servlet-mapping>
 </web-app>

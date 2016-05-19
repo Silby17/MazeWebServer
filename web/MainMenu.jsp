@@ -11,22 +11,29 @@
 </head>
 <body>
 <ul div style="float: right">
-    <li>
+    <li >
         </div>
-        <button>Back<a href=\SignUpForm.html></a></button>
+        <button>Back</button>
         </div>
     </li>
     <li>
-        <div style="float: right" id="userImage">
-            <img src="images/Icons/panda.png"/>
-        </div>
+        <% String icon = "images/Icons/";
+         String iconName = (String)session.getAttribute("icon");
+         icon += iconName;
+         System.out.println(icon);
+         {%> <div style="float: right" id="userImage">
+            <img src="<%=icon%>"/>
+        </div><%}%>
     <li>
-        <div>Username</div>
+    <% String username = (String) session.getAttribute("username");
+        {%>
+    <label><%=username%></label>
+    <%}%>
     </li>
 </ul>
 
 <div class="form-bg">
-    <form action="MainMenuServlet" method="post">
+    <form action="MenuServlet" method="post">
         <h2>Main Menu</h2>
         <button type="submit" name="singleBtn" value="single">Single Player</button>
         <button type="submit" name="multiBtn" value="multi">Multiplayer</button>

@@ -34,12 +34,26 @@ public class DBManager {
      * @return = True if they are correct and False if incorrect
      ******************************************************************/
     public boolean checkLoginDetails(String userName, String pass){
-        if(userMap.get(userName).getPassword().toLowerCase().
-                equals(pass.toLowerCase())){
-            return true;
-        }
-        else{
+        System.out.println("in details check");
+        System.out.println(userMap.size());
+        if(userMap.get(userName) == null)
+        {
             return false;
         }
+        else{
+            if(userMap.get(userName).getPassword().toLowerCase().
+                    equals(pass.toLowerCase())){
+                System.out.println("return true");
+                return true;
+            }
+            else{
+                System.out.println("return false");
+                return false;
+            }
+        }
+    }
+
+    public User getUser(String username){
+        return userMap.get(username);
     }
 }
