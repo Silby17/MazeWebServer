@@ -28,6 +28,7 @@ public class WelcomeWindowServlet extends HttpServlet {
         String password = request.getParameter("password");
         if(userName.equals("admin") && password.equals("admin")){
             HttpSession session = request.getSession();
+            session.setAttribute("username", userName);
             response.sendRedirect("/MainMenuServlet");
         }
         else{
