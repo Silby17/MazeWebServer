@@ -9,8 +9,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "MyFormServlet", urlPatterns = {"/MyFormServlet"})
-public class MyFormServlet extends HttpServlet {
+@WebServlet(name = "WelcomeWindowServlet", urlPatterns = {"/WelcomeWindowServlet"})
+public class WelcomeWindowServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

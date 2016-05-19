@@ -11,8 +11,8 @@ import java.io.PrintWriter;
 /***************************************************************************
  * This class is Responsible for adding a new user to the application
  ***************************************************************************/
-@WebServlet(name = "NewUserForm", urlPatterns = {"/NewUserForm"})
-public class NewUserForm extends HttpServlet {
+@WebServlet(name = "NewUserFormServlet", urlPatterns = {"/NewUserFormServlet"})
+public class NewUserFormServlet extends HttpServlet {
 
 
     /************************************************************************
@@ -43,17 +43,12 @@ public class NewUserForm extends HttpServlet {
         String pass = request.getParameter("password").toLowerCase();
         String name = request.getParameter("name").toLowerCase();
         String email = request.getParameter("email").toLowerCase();
+        String icon = request.getParameter("icon");
 
-        String panda = request.getParameter("panda");
-        String face = request.getParameter("redFace");
-        String nose = request.getParameter("redNose");
-        System.out.println("icon logo print: " + panda);
-        System.out.println("icon logo print: " + face);
-        System.out.println("icon logo print: " + nose);
 
         //Checks that none of the input boxes are empty.
         if(usrName.equals("") || pass.equals("") || name.equals("") ||
-                email.equals("")) {
+                email.equals("") || icon == null) {
             PrintWriter out = response.getWriter();
             out.println(getErrorMessage());
         }
@@ -61,15 +56,13 @@ public class NewUserForm extends HttpServlet {
         //If all boxes have been filled out then extract the all the info
         //and create a new User to be added to the DataBase
         else{
-            System.out.println("In new user Form");
-            System.out.println(usrName + " " + pass);
-            User newUser = new User(usrName, pass, name, email, "stum");
+            User newUser = new User(usrName, pass, name, email, icon += ".png");
             ServletContext context = getServletContext();
             Object att = context.getAttribute("database");
             DBManager manager = (DBManager)att;
             manager.addUser(newUser);
             HttpSession session = request.getSession();
-            response.sendRedirect("MyFormServlet");
+            response.sendRedirect("WelcomeWindowServlet");
         }
     }
 
@@ -81,7 +74,8 @@ public class NewUserForm extends HttpServlet {
      *************************************************************************/
     private String getErrorMessage(){
         String messageScript = "<head>\n" +
-                "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n" +
+                "<meta http-equiv=\"Content-Type\" content=\"text/html; " +
+                "charset=UTF-8\">\n" +
                 "<title>Private data</title>\n" +
                 "<script>\n" +
                 "alert('Please Enter in all your details!');\n" +

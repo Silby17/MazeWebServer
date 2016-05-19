@@ -19,24 +19,26 @@
         <form action="/NewUserForm" method="post">
             <h2>Sign Up - Please Enter in all you Information</h2>
             <p><input type="text" placeholder="Username" name="username"></p>
-            <p><input type="password" placeholder="Password" name="password"></p>
+            <p><input type="password" placeholder="Password" name="password">
+            </p>
             <p><input type="text" placeholder="Name" name="name"></p>
             <p><input type="text" placeholder="Email" name="email"></p>
 
-            <div class="checkbox-wrapper" style="float: left" id="pandaBox">
-                <input type="checkbox" name="panda" value="clicked"/>
-                <img src="images/Icons/panda.png"/>
-            </div>
-            <div class="checkbox-wrapper" style="float: left">
-                <input type="checkbox" name="redFace" value="clicked"/>
-                <img src="images/Icons/redFace.png"/>
-            </div>
-            <div class="checkbox-wrapper" style="float: left">
-                <input type="checkbox" name="redNose" value="clicked"/>
-                <img src="images/Icons/redNOse.png"/>
-            </div>
 
-            <button type="submit" >Submit</button>
+            <p><div align="center">
+                <input type="radio" name="icon" value="panda"
+                       style="margin-right: -5%"/><label><img
+                    src="images/Icons/panda.png"/></label>
+                <input type="radio" name="icon" value="redNose"/><label><img
+                    src="images/Icons/redNose.png"/></label>
+                <input type="radio" name="icon" value="redFace"><label><img
+                    src="images/Icons/redFace.png"/></label>
+            </div></p>
+            <p><div align="right">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div></p>
+
         </form>
     </div>
 </div>

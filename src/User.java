@@ -19,23 +19,43 @@ public class User {
         this.icon = icon;
     }
 
-    public String getUsername() {
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public String getUserName() {
         return userName;
     }
 
-    public String getPassword(){
-        return this.password;
+    public String getPassword() {
+        return password;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public String getEmail(){
+    public String getEmail() {
         return email;
     }
 
-    public String getIcon(){
+    public String getIcon() {
         return icon;
     }
 }

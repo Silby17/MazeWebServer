@@ -11,7 +11,7 @@
 
 .form-bg {
     width: 370px;
-    height: 410px;
+    height: 440px;
     -moz-border-radius: 10px;
     -webkit-border-radius: 9px;
     border-radius: 9px;
@@ -22,7 +22,7 @@
 
 .form-bg form {
     width: 360px;
-    height: 400px;
+    height: 430px;
     background: #fff url(../images/bg_form.jpg) repeat-x top left;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -99,6 +99,7 @@ label {
     display: inline;
     margin-left: 24px;
     vertical-align: middle;
+    text-align: left;
 }
 
 label span {
