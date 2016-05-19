@@ -17,11 +17,18 @@
         </div>
     </li>
     <li>
-        <div style="float: right" id="userImage">
-            <img src="images/Icons/panda.png"/>
-        </div>
+        <% String icon = "images/Icons/";
+         String iconName = (String)session.getAttribute("icon");
+         icon += iconName;
+         System.out.println(icon);
+         {%> <div style="float: right" id="userImage">
+            <img src="<%=icon%>"/>
+        </div><%}%>
     <li>
-        <div>Username</div>
+    <% String username = (String) session.getAttribute("username");
+        {%>
+    <label><%=username%></label>
+    <%}%>
     </li>
 </ul>
 
