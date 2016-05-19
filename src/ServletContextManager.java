@@ -26,6 +26,12 @@ public class ServletContextManager implements ServletContextListener {
         ServletContext context = servletContextEvent.getServletContext();
         serverManager = new ServerConnectionManager(IP, PORT);
         this.dbManager = new DBManager();
+
+        /**TO REMOVE BELOW**/
+        User temp = new User("admin", "admin", "Yossi", "yo@s.com", "redNose.png");
+        dbManager.addUser(temp);
+
+
         context.setAttribute("database", dbManager);
         context.setAttribute("connection", serverManager);
         System.out.println("Context initialized");
