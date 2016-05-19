@@ -23,7 +23,7 @@ public class DBManager {
      * @param user - New user to be added
      ******************************************************************/
     public void addUser(User user){
-        this.userMap.put(user.getUsername(), user);
+        this.userMap.put(user.getUserName(), user);
     }
 
 
