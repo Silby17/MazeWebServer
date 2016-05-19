@@ -62,7 +62,7 @@ public class NewUserFormServlet extends HttpServlet {
             DBManager manager = (DBManager)att;
             manager.addUser(newUser);
             HttpSession session = request.getSession();
-            response.sendRedirect("WelcomeWindowServlet");
+            response.sendRedirect("LoginServlet");
         }
     }
 

@@ -30,7 +30,6 @@ public class MenuServlet extends HttpServlet {
      * @throws IOException
      ************************************************************************/
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("in MenuServlet");
         response.sendRedirect("MainMenu.html");
     }
 }

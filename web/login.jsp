@@ -4,7 +4,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Login Form</title>
     <meta name="description" content="">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
     <!-- Stylesheets -->
@@ -16,7 +15,7 @@
 <body>
 <div class="container">
     <div class="form-small">
-        <form action="MyFormServlet" method="post">
+        <form action="LoginServlet" method="post">
             <h2>Login</h2>
             <p><input type="text" placeholder="Username" name="username"></p>
             <p><input type="password" placeholder="Password" name="password"></p>
@@ -26,9 +25,7 @@
                 <span>Username or Password are incorrect</span>
             </label>
             <%} %>
-
             <button type="submit">Login</button>
-
         </form>
     </div>
     <p class="forgot">New User? <a  href=\SignUpForm.html>Click here to Sign up it.</a></p>

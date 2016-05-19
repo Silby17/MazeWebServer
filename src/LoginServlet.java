@@ -9,8 +9,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name = "WelcomeWindowServlet", urlPatterns = {"/WelcomeWindowServlet"})
-public class WelcomeWindowServlet extends HttpServlet {
+@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -29,7 +29,7 @@ public class WelcomeWindowServlet extends HttpServlet {
         if(userName.equals("admin") && password.equals("admin")){
             HttpSession session = request.getSession();
             session.setAttribute("username", userName);
-            response.sendRedirect("/MainMenuServlet");
+            response.sendRedirect("/MenuServlet");
         }
         else{
             request.setAttribute("error", true);
@@ -39,7 +39,6 @@ public class WelcomeWindowServlet extends HttpServlet {
         if(manager.checkLoginDetails(userName, password))
         {
             HttpSession session = request.getSession();
-            response.sendRedirect("secured/MyPrivateData");
         }
         else {
             request.setAttribute("error", true);
