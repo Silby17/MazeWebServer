@@ -18,7 +18,8 @@ public class MenuServlet extends HttpServlet {
      * @throws ServletException
      * @throws IOException
      ******************************************************************/
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
 
     }
 
@@ -29,7 +30,8 @@ public class MenuServlet extends HttpServlet {
      * @throws ServletException
      * @throws IOException
      ************************************************************************/
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("MainMenu.html");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.sendRedirect("MainMenu.jsp");
     }
 }
