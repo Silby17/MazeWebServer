@@ -43,11 +43,17 @@ public class NewUserForm extends HttpServlet {
         String pass = request.getParameter("password").toLowerCase();
         String name = request.getParameter("name").toLowerCase();
         String email = request.getParameter("email").toLowerCase();
-        String icon= request.getParameter("icon").toLowerCase();
+
+        String panda = request.getParameter("panda");
+        String face = request.getParameter("redFace");
+        String nose = request.getParameter("redNose");
+        System.out.println("icon logo print: " + panda);
+        System.out.println("icon logo print: " + face);
+        System.out.println("icon logo print: " + nose);
 
         //Checks that none of the input boxes are empty.
         if(usrName.equals("") || pass.equals("") || name.equals("") ||
-                email.equals("") || icon.equals("")) {
+                email.equals("")) {
             PrintWriter out = response.getWriter();
             out.println(getErrorMessage());
         }
@@ -57,7 +63,7 @@ public class NewUserForm extends HttpServlet {
         else{
             System.out.println("In new user Form");
             System.out.println(usrName + " " + pass);
-            User newUser = new User(usrName, pass, name, email, icon);
+            User newUser = new User(usrName, pass, name, email, "stum");
             ServletContext context = getServletContext();
             Object att = context.getAttribute("database");
             DBManager manager = (DBManager)att;
