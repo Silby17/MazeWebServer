@@ -27,7 +27,7 @@
             </label>
             <%} %>
 
-            <button type="submit"></button>
+            <button type="submit">Login</button>
 
         </form>
     </div>
