@@ -70,20 +70,22 @@
 
 
 button {
-    background: url(../images/BlueButton.png) no-repeat;
-    width: 118px;
+    background: url(../images/btnGlossyBlue.png) no-repeat;
+    width: 120px;
     height: 40px;
     border: 0px;
     margin-left: 10%;
     margin-top: 5%;
+    font-size: 100%;
 }
 
 
 button:hover {
-    background: url(../images/greenBUtton.png) no-repeat;
-    width: 118px;
+    background: url(../images/btnGlossyGreen.png) no-repeat;
+    width: 120px;
     height: 40px;
     border: 0px;
+    font-size: 100%;
 }
 
 button:active {
