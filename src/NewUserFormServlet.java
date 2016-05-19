@@ -11,8 +11,8 @@ import java.io.PrintWriter;
 /***************************************************************************
  * This class is Responsible for adding a new user to the application
  ***************************************************************************/
-@WebServlet(name = "NewUserForm", urlPatterns = {"/NewUserForm"})
-public class NewUserForm extends HttpServlet {
+@WebServlet(name = "NewUserFormServlet", urlPatterns = {"/NewUserFormServlet"})
+public class NewUserFormServlet extends HttpServlet {
 
 
     /************************************************************************
@@ -45,7 +45,6 @@ public class NewUserForm extends HttpServlet {
         String email = request.getParameter("email").toLowerCase();
         String icon = request.getParameter("icon");
 
-        System.out.println("icon : " + icon);
 
         //Checks that none of the input boxes are empty.
         if(usrName.equals("") || pass.equals("") || name.equals("") ||
@@ -63,7 +62,7 @@ public class NewUserForm extends HttpServlet {
             DBManager manager = (DBManager)att;
             manager.addUser(newUser);
             HttpSession session = request.getSession();
-            response.sendRedirect("MyFormServlet");
+            response.sendRedirect("WelcomeWindowServlet");
         }
     }
 

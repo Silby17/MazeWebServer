@@ -13,7 +13,7 @@ public class LoginFilter implements Filter {
         if (session != null) {
             chain.doFilter(request, response);
         } else {
-            ((HttpServletResponse) response).sendRedirect("/MyFormServlet");
+            ((HttpServletResponse) response).sendRedirect("/WelcomeWindowServlet");
         }
     }
 

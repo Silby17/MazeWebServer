@@ -7,7 +7,7 @@ import java.io.*;
  * This Class will initialize the Contexts and add attributes that will be
  * able to be accessed throughout the application
  *****************************************************************************/
-public class MyServletContextManager implements ServletContextListener {
+public class ServletContextManager implements ServletContextListener {
     private DBManager dbManager;
     private ServerConnectionManager serverManager;
     private String IP;
