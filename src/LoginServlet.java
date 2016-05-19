@@ -26,24 +26,16 @@ public class LoginServlet extends HttpServlet {
         DBManager manager = (DBManager)att;
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
-        if(userName.equals("admin") && password.equals("admin")){
+        if(manager.checkLoginDetails(userName, password)){
+            User currentUser = manager.getUser(userName);
             HttpSession session = request.getSession();
             session.setAttribute("username", userName);
+            session.setAttribute("icon", currentUser.getIcon());
             response.sendRedirect("/MenuServlet");
         }
         else{
             request.setAttribute("error", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
-        /**
-        if(manager.checkLoginDetails(userName, password))
-        {
-            HttpSession session = request.getSession();
-        }
-        else {
-            request.setAttribute("error", true);
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-        }
-         **/
     }
 }
