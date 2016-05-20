@@ -39,7 +39,6 @@ public class NewUserFormServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("in do post of new user from serlver");
         String usrName = request.getParameter("username").toLowerCase();
         String pass = request.getParameter("password").toLowerCase();
         String name = request.getParameter("name").toLowerCase();
@@ -56,14 +55,12 @@ public class NewUserFormServlet extends HttpServlet {
         //If all boxes have been filled out then extract the all the info
         //and create a new User to be added to the DataBase
         else{
-            System.out.println("in else");
             User newUser = new User(usrName, pass, name, email, icon += ".png");
             ServletContext context = getServletContext();
             Object att = context.getAttribute("database");
             DBManager manager = (DBManager)att;
             manager.addUser(newUser);
             HttpSession session = request.getSession();
-            System.out.println("before login redirect");
             response.sendRedirect("/LoginServlet");
         }
     }
