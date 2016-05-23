@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>SinglePlayer</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
 </head>
 <body>
-<canvas width="616" height="556" id="mazecanvas">Can't load the maze game, because your browser doesn't support HTML5.</canvas>
-<script src="MazeActions.js"></script>
+<canvas id="myCanvas" width="556" height="556"></canvas>
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    var imageObj = new Image();
+
+    imageObj.onload = function() {
+        context.drawImage(imageObj, 0, 0);
+    };
+    imageObj.src = "images/maze.png";
+</script>
 </body>
 </html>

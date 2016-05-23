@@ -1,4 +1,11 @@
+window.onload = function() {
+ var mazeImg = new Image();
+ mazeImg.setAttribute("src", "images/maze.png");
+//mazeImg.src = "images/maze.png";
  var c = document.getElementById("mazecanvas");
  var ctx = c.getContext("2d");
- ctx.fillStyle = "#FF0000";
- ctx.fillRect(0,0,150,75);
+ //var img = document.getElementById("maze");
+ ctx.drawImage(mazeImg, 10, 10);
+}
+
+
