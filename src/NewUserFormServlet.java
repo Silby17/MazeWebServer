@@ -45,7 +45,6 @@ public class NewUserFormServlet extends HttpServlet {
         String email = request.getParameter("email").toLowerCase();
         String icon = request.getParameter("icon");
 
-
         //Checks that none of the input boxes are empty.
         if(usrName.equals("") || pass.equals("") || name.equals("") ||
                 email.equals("") || icon == null) {
@@ -62,7 +61,7 @@ public class NewUserFormServlet extends HttpServlet {
             DBManager manager = (DBManager)att;
             manager.addUser(newUser);
             HttpSession session = request.getSession();
-            response.sendRedirect("LoginServlet");
+            response.sendRedirect("/LoginServlet");
         }
     }
 

@@ -20,7 +20,6 @@
         <% String icon = "images/Icons/";
          String iconName = (String)session.getAttribute("icon");
          icon += iconName;
-         System.out.println(icon);
          {%> <div style="float: right" id="userImage">
             <img src="<%=icon%>"/>
         </div><%}%>

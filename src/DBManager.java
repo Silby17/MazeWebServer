@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.HashMap;
 
 
@@ -15,6 +16,7 @@ public class DBManager {
      *****************************************************************/
     public DBManager(){
         this.userMap = new HashMap<>();
+        //deserializeUsers();
     }
 
 
@@ -24,6 +26,7 @@ public class DBManager {
      ******************************************************************/
     public void addUser(User user){
         this.userMap.put(user.getUserName(), user);
+        //serializeUsers();
     }
 
 
@@ -34,8 +37,7 @@ public class DBManager {
      * @return = True if they are correct and False if incorrect
      ******************************************************************/
     public boolean checkLoginDetails(String userName, String pass){
-        System.out.println("in details check");
-        System.out.println(userMap.size());
+        System.out.println("User Map size: " + userMap.size());
         if(userMap.get(userName) == null)
         {
             return false;
@@ -55,5 +57,39 @@ public class DBManager {
 
     public User getUser(String username){
         return userMap.get(username);
+    }
+
+
+    /**********************************************************************
+     * This method will save all the users by serializing them to a file
+     *********************************************************************/
+    public void serializeUsers(){
+        try{
+            FileOutputStream fos = new FileOutputStream("users.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(userMap);
+            oos.close();
+            fos.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    /**********************************************************************
+     * This method will deserialize the HashMap of all the Users
+     *********************************************************************/
+    public void deserializeUsers(){
+
+        try{
+            FileInputStream fis = new FileInputStream("users.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            userMap = (HashMap)ois.readObject();
+            ois.close();
+            fis.close();
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (ClassNotFoundException c){
+            c.printStackTrace();
+        }
     }
 }
