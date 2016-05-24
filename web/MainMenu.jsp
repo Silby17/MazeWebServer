@@ -24,6 +24,7 @@
             <img src="<%=icon%>"/>
         </div><%}%>
     <li>
+
     <% String username = (String) session.getAttribute("username");
         {%>
     <label><%=username%></label>
@@ -34,8 +35,8 @@
 <div class="form-bg">
     <form action="MenuServlet" method="post">
         <h2>Main Menu</h2>
-        <button type="submit" name="singleBtn" value="single">Single Player</button>
-        <button type="submit" name="multiBtn" value="multi">Multiplayer</button>
+        <button type="submit" name="action" value="single">Single Player</button>
+        <button type="submit" name="action" value="multi">Multiplayer</button>
     </form>
 </div>
 </div>
