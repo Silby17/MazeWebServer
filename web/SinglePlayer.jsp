@@ -54,12 +54,8 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
     $(function(){
         $('#getMazeBtn').click(function(){
             if(confirm('Are you sure you want to start a new Game?')){
-                checkInterval = setInterval(function() {getMaze()}, 3000);
+                checkInterval = setInterval(function() {getMaze()}, 5000);
             }
-            else{
-
-            }
-
         });
     });
 
@@ -69,7 +65,6 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
                 mazeFromServer = data.singleMaze;
             console.log(mazeFromServer.Name);
             console.log(mazeFromServer);
-
             stopJSONCheck();
         })
     }
