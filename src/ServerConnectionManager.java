@@ -35,7 +35,6 @@ public class ServerConnectionManager {
             String msg = new String(connectionMsg);
             System.out.println("Connection with Server Successful");
         } catch (IOException e ){
-            System.out.println("Connection with server Failed");
             e.printStackTrace();
         }
     }
