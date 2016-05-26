@@ -3,27 +3,23 @@
 <head>
     <link rel="stylesheet" href="css/mainMenu.css">
 </head>
-<body>
+<body background="/images/bg.jpg">
 
-<ul div style="float: right" class="ul userInfo">
-    <li >
-        </div>
-        <button>Back</button>
-        </div>
-    </li>
-    <li>
-            <% String icon = "images/Icons/";
-         String iconName = (String)session.getAttribute("icon");
-         icon += iconName;
-         {%> <div style="float: right" id="userImage">
+
+<ul style="float:right">
+    <li><button>Back</button></li>
+
+    <li> <% String icon = "images/Icons/";
+        String iconName = (String)session.getAttribute("icon");
+        icon += iconName;
+        {%> <div style="float: right" id="userImage">
         <img src="<%=icon%>"/>
-    </div><%}%>
-    <li>
-        <% String username = (String) session.getAttribute("username");
-            {%>
+    </div><%}%></li>
+
+    <li><% String username = (String) session.getAttribute("username");
+        {%>
         <label><%=username%></label>
-        <%}%>
-    </li>
+        <%}%></li>
 </ul>
 
 
