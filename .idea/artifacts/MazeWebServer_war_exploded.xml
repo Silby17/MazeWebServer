@@ -7,7 +7,11 @@
         <element id="directory" name="classes">
           <element id="module-output" name="MazeWebServer" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="json-simple-1.1.1" />
+        </element>
       </element>
+      <element id="library" level="project" name="json-simple-1.1.1" />
     </root>
   </artifact>
 </component>
