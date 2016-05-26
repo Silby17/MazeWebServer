@@ -4,19 +4,24 @@
     <link rel="stylesheet" href="css/mainMenu.css">
 </head>
 <body>
+<div class="btn-group" style="float: left" >
+    <form action="SinglePlayerServlet" method="post">
+        <button type="submit" name="action" value="StartNewGame">Start New Game</button>
+        <button type="submit" name="action" value="Suggestion">Get Suggestion</button>
+        <button type="submit" name="action" value="Return">Return to Main Menu</button>
+    </form>
+</div>
 <canvas id="myCanvas" width="1000" height="550"></canvas>
-<img id="myImg" src="images/Icons/redFace.png" width="40" height="40" style="float:left" align="center">
+
+<% String icon = "images/Icons/";
+    String iconName = (String) session.getAttribute("icon");
+    icon += iconName;
+    {%><img id="myImg" src="<%=icon%>" width="40" height="40"
+            style="float:left" align="center"/> <%
+    }
+%>
+
 <script src = "MazeActions.js"></script>
-<ul div style="float: right">
-    <li >
-        <button type="button"><a href="MainMenu.jsp">Back</a></button>
-    </li>
-    <li >
-        <button type="button"><a href="SinglePlayer.jsp">Reset</a></button>
-    </li>
-    <li >
-        <button type="button"><a href="SinglePlayer.jsp">Suggestion</a></button>
-    </li>
-</ul>
+
 </body>
 </html>
