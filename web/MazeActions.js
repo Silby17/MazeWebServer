@@ -4,7 +4,9 @@ var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
 var mazeWidth = 400;
 var mazeHeight = 400;
-var imageObj = new Image();
+var imageObj = document.getElementById("myImg");
+
+//imageObj.id = "myImg";
 
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze) {
@@ -36,7 +38,7 @@ function PlacePlayerIcon(currX ,currY) {
  imageObj.onload = function() {
   context.drawImage(imageObj, currX, currY);
  };
- imageObj.src = "images/Icons/panda.png";
+ imageObj.src = "images/Icons/redFace.png";
 }
 
 function canMoveTo(destX, destY) {
@@ -115,10 +117,10 @@ function move(e) {
 
 
 function move1(e){
- imageObj.style.visibility = 'hidden';
- PlacePlayerIcon(currX+100, currY+100);
+ document.getElementById("myImg").style.visibility = "hidden";
+ PlacePlayerIcon(currX + 40, currY + 40);
 }
 DrawMaze("1010101110100010101010111010001000101011101010101010101110101001110011110011110011110011110011110011");
-PlacePlayerIcon(currX,currY);
+//PlacePlayerIcon(currX,currY);
 window.addEventListener("keydown", move1);
 
