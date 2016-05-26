@@ -1,3 +1,5 @@
+import org.json.simple.JSONObject;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,11 +23,13 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        JSONObject obj = new JSONObject();
         ServletContext context = getServletContext();
         Object att = context.getAttribute("database");
         DBManager manager = (DBManager)att;
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
+        System.out.println("Username: " + userName + " Password: " + password);
         if(manager.checkLoginDetails(userName, password)){
             User currentUser = manager.getUser(userName);
             HttpSession session = request.getSession();
