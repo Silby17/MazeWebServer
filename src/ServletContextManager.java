@@ -25,6 +25,7 @@ public class ServletContextManager implements ServletContextListener {
         readConfigInfo();
         ServletContext context = servletContextEvent.getServletContext();
         serverManager = new ServerConnectionManager(IP, PORT);
+        serverManager.connect();
         this.dbManager = new DBManager();
 
         /**TO REMOVE BELOW**/
