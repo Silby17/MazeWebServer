@@ -1,18 +1,32 @@
-ul {
+ul.userInfo {
     position:fixed;
     top: 0;
     margin: auto;
     list-style-type: none;
     padding: 0;
-    overflow: hidden;
     border: 1px solid #e7e7e7;
     background-color: #f3f3f3;
     right: 0%;
 }
 
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+ul.btnRow {
+    top: 0;
+    left: 50%;
+    margin: auto;
+    list-style-type: none;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
 li {
     float: left;
-
 }
 
 li a {
