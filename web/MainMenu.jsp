@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/mainMenu.css">
 </head>
 <body>
-<ul div style="float: right">
+<ul div style="float: right" class="ul userInfo">
     <li >
         </div>
         <button>Back</button>
@@ -36,7 +36,7 @@
     <form action="MenuServlet" method="post">
         <h2>Main Menu</h2>
         <button type="submit" name="action" value="single">Single Player</button>
-        <button type="submit" name="action" value="multi">Multiplayer</button>
+        <button type="submit" name="action" value="multiplayer">Multiplayer</button>
     </form>
 </div>
 </div>
