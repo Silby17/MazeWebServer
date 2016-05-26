@@ -18,14 +18,14 @@ function DrawMaze(stringMaze, endX, endY) {
  for (var i = 0; i < 10; i++) {
   //go over the col, if 0 draw white cube if 1 draw black cube
   for (var j = 0; j < 10; j++) {
-    if(stringMaze[index] == '1') {
+   if(stringMaze[index] == '1') {
     context.fillStyle = "#B6E9FA";
     context.fillRect(x, y, 40, 40);
    }
    else {
-     context.fillStyle = "white";
-     context.fillRect(x, y, 40, 40);
-    }
+    context.fillStyle = "white";
+    context.fillRect(x, y, 40, 40);
+   }
    //color end point
    if(i==9 && j==9){
     context.fillStyle = "#3045BF";
@@ -53,12 +53,12 @@ function canMoveTo(destX, destY) {
 
 //show the move if ok
 function Win(newX, newY) {
-  context.font = "40px Arial";
-  context.fillStyle = "blue";
-  context.textAlign = "center";
-  context.textBaseline = "middle";
-  context.fillText("Congratulations!", canvas.width / 2, canvas.height / 2);
-  window.removeEventListener("keydown", move, true);
+ context.font = "40px Arial";
+ context.fillStyle = "blue";
+ context.textAlign = "center";
+ context.textBaseline = "middle";
+ context.fillText("Congratulations!", canvas.width / 2, canvas.height / 2);
+ window.removeEventListener("keydown", move, true);
 }
 
 
@@ -67,59 +67,59 @@ function move(e) {
  var movingAllowed;
  var color, blue;
  e = e || window.event;
-  switch (e.keyCode) {
-      // arrow up key
-   case 38:
+ switch (e.keyCode) {
+     // arrow up key
+  case 38:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left), parseInt(imageObj.style.top) - 40);
-    color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) - 40, 40, 40);
-    blue = parseInt(color.data[2]);
-    if(movingAllowed == 1 && blue != 255) {
-        document.getElementById("myImg").style.visibility = "hidden";
-        imageObj.style.top = parseInt(imageObj.style.top) - 40 + 'px';
-        imageObj.style.visibility = 'visible';
-       }
+   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) - 40, 40, 40);
+   blue = parseInt(color.data[2]);
+   if(movingAllowed == 1 && blue != 255) {
+    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.top = parseInt(imageObj.style.top) - 40 + 'px';
+    imageObj.style.visibility = 'visible';
+   }
+   break;
+     // arrow left key
+  case 37:
+   movingAllowed = canMoveTo(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top));
+   color = context.getImageData(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top), 40, 40);
+   blue = parseInt(color.data[2]);
+   if(movingAllowed == 1 && blue != 255) {
+    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.left = parseInt(imageObj.style.left) - 40 + 'px';
+    imageObj.style.visibility = 'visible';
     break;
-      // arrow left key
-   case 37:
-    movingAllowed = canMoveTo(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top));
-    color = context.getImageData(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top), 40, 40);
-    blue = parseInt(color.data[2]);
-    if(movingAllowed == 1 && blue != 255) {
-     document.getElementById("myImg").style.visibility = "hidden";
-     imageObj.style.left = parseInt(imageObj.style.left) - 40 + 'px';
-     imageObj.style.visibility = 'visible';
-     break;
-    }
-      // arrow down key
-   case 40:
-       alert("6666");
-    movingAllowed = canMoveTo(parseInt(imageObj.style.left), parseInt(imageObj.style.top + 40));
-    color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) + 40, 40, 40);
-    blue = parseInt(color.data[2]);
-    if(movingAllowed == 1 && blue != 255) {
-     document.getElementById("myImg").style.visibility = "hidden";
-     imageObj.style.top = parseInt(imageObj.style.top) + 40 + 'px';
-     imageObj.style.visibility = 'visible';
-     break;
-    }
-      // arrow right key
-   case 39:
-    movingAllowed = canMoveTo(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top));
-    color = context.getImageData(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top), 40, 40);
-    blue = parseInt(color.data[2]);
-    if(movingAllowed == 1 && blue != 255) {
-     document.getElementById("myImg").style.visibility = "hidden";
-     imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
-     imageObj.style.visibility = 'visible';
-     break;
-    }
-  }
+   }
+     // arrow down key
+  case 40:
+   alert("6666");
+   movingAllowed = canMoveTo(parseInt(imageObj.style.left), parseInt(imageObj.style.top + 40));
+   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) + 40, 40, 40);
+   blue = parseInt(color.data[2]);
+   if(movingAllowed == 1 && blue != 255) {
+    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.top = parseInt(imageObj.style.top) + 40 + 'px';
+    imageObj.style.visibility = 'visible';
+    break;
+   }
+     // arrow right key
+  case 39:
+   movingAllowed = canMoveTo(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top));
+   color = context.getImageData(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top), 40, 40);
+   blue = parseInt(color.data[2]);
+   if(movingAllowed == 1 && blue != 255) {
+    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
+    imageObj.style.visibility = 'visible';
+    break;
+   }
+ }
 }
 
 function move1(e){
  document.getElementById("myImg").style.visibility = "hidden";
  imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
-imageObj.style.visibility = 'visible';
+ imageObj.style.visibility = 'visible';
 
 }
 //main
