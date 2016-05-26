@@ -122,8 +122,7 @@ function move1(e){
  imageObj.style.visibility = 'visible';
 
 }
-//main
-DrawMaze("0010101110100010101010111010001000101011101010101010101110101001110011110011110011110011110011110011",790, 460);
+
 //PlacePlayerIcon(currX,currY);
 window.addEventListener("keydown", move);
 
