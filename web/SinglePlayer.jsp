@@ -76,7 +76,7 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
     function stopJSONCheck() {
         clearInterval(checkInterval);
             var ob = JSON.parse(mazeFromServer);
-        DrawMaze(ob.Maze);
+        DrawMaze(ob.Maze, 790, 460);
     }
 </script>
 </body>
