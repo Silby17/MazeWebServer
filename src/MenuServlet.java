@@ -20,7 +20,13 @@ public class MenuServlet extends HttpServlet {
      ******************************************************************/
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        String buttonClicked = request.getParameter("action");
+        System.out.println("Button click: " + buttonClicked);
+        if(buttonClicked.equals("single")){
+            response.sendRedirect("/SinglePlayerServlet");
+        }
+        else if(buttonClicked.equals("multiplayer"))
+            response.sendRedirect("/MultiplayerServlet");
     }
 
     /************************************************************************
