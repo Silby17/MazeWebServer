@@ -38,6 +38,7 @@ public class DBManager {
      ******************************************************************/
     public boolean checkLoginDetails(String userName, String pass){
         System.out.println("User Map size: " + userMap.size());
+        System.out.println("To check: " + userName + "  " + pass);
         if(userMap.get(userName) == null)
         {
             return false;
