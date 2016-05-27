@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="css/mainMenu.css">
 </head>
 <body background="/images/bg.jpg">
-
+<div class="loader" style="display: none"></div>
 
 <ul style="float:right">
     <li><button>Back</button></li>
@@ -50,10 +50,13 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
     var current = 0;
     var checkInterval;
     var mazeFromServer;
+    var pageLoaderInterval;
+
 
     $(function(){
         $('#getMazeBtn').click(function(){
             if(confirm('Are you sure you want to start a new Game?')){
+                $('.loader').show();
                 checkInterval = setInterval(function() {getMaze()}, 5000);
             }
         });
@@ -70,6 +73,7 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
     }
     function stopJSONCheck() {
         clearInterval(checkInterval);
+        $('.loader').hide();
             var ob = JSON.parse(mazeFromServer);
         DrawMaze(ob.Maze, 790, 460);
     }
