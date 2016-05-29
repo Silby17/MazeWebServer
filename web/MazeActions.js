@@ -10,7 +10,7 @@ imageObj.style.top = '100px';
 //imageObj.id = "myImg";
 
 //gets a string and makes a grid out of it.
-function DrawMaze(stringMaze, endX, endY) {
+function DrawMaze(stringMaze, startX, startY, endX, endY) {
  context.rect(430,100,400,400);
  context.stroke();
  var x = 430, y = 100, index =0;
@@ -26,17 +26,24 @@ function DrawMaze(stringMaze, endX, endY) {
     context.fillStyle = "white";
     context.fillRect(x, y, 40, 40);
    }
-   //color end point
-   if(i==9 && j==9){
-    context.fillStyle = "#3045BF";
-    context.fillRect(endX, endY, 40, 40);
-   }
    x = x + 40;
    index++;
   }
   y = y + 40;
   x = 430;
  }
+//draw start point
+//startX = 430 + (startX*40);
+ //startY = 100 + (startY*40);
+ var x = (430 + (startY * 40));
+ var y = (100 + (startX * 40));
+ imageObj.style.left = parseInt(x)  + 'px';
+ imageObj.style.top = parseInt(y) + 'px';
+ imageObj.style.visibility = 'visible';
+ //color end point
+  context.fillStyle = "#3045BF";
+  context.fillRect((430 + (40 * endY)), (100 + (40 * endX)), 40, 40);
+
 }
 
 function canMoveTo(destX, destY) {
@@ -71,9 +78,9 @@ function move(e) {
      // arrow up key
   case 38:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left), parseInt(imageObj.style.top) - 40);
-   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) - 40, 40, 40);
+   color = context.getImageData((parseInt(imageObj.style.left)-40), (parseInt(imageObj.style.top) - 40), 40, 40);
    blue = parseInt(color.data[2]);
-   if(movingAllowed == 1 && blue != 255) {
+   if(movingAllowed == 1 && blue == 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.top = parseInt(imageObj.style.top) - 40 + 'px';
     imageObj.style.visibility = 'visible';
@@ -82,47 +89,40 @@ function move(e) {
      // arrow left key
   case 37:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top));
-   color = context.getImageData(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top), 40, 40);
+   color = context.getImageData((parseInt(imageObj.style.left) - 40), parseInt(imageObj.style.top), 40, 40);
    blue = parseInt(color.data[2]);
-   if(movingAllowed == 1 && blue != 255) {
+   if(movingAllowed == 1 && blue == 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.left = parseInt(imageObj.style.left) - 40 + 'px';
     imageObj.style.visibility = 'visible';
-    break;
    }
+    break;
      // arrow down key
   case 40:
-   alert("6666");
    movingAllowed = canMoveTo(parseInt(imageObj.style.left), parseInt(imageObj.style.top + 40));
-   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) + 40, 40, 40);
+   color = context.getImageData((parseInt(imageObj.style.left)-40), (parseInt(imageObj.style.top) + 40), 40, 40);
    blue = parseInt(color.data[2]);
-   if(movingAllowed == 1 && blue != 255) {
+   if(movingAllowed == 1 && blue == 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.top = parseInt(imageObj.style.top) + 40 + 'px';
     imageObj.style.visibility = 'visible';
-    break;
    }
+   break;
      // arrow right key
   case 39:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top));
-   color = context.getImageData(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top), 40, 40);
+   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top), 40, 40);
    blue = parseInt(color.data[2]);
    if(movingAllowed == 1 && blue != 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
     imageObj.style.visibility = 'visible';
-    break;
    }
+    break;
  }
 }
 
-function move1(e){
- document.getElementById("myImg").style.visibility = "hidden";
- imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
- imageObj.style.visibility = 'visible';
-
-}
-
+document.getElementById("myImg").style.visibility = "hidden";
 //PlacePlayerIcon(currX,currY);
 window.addEventListener("keydown", move);
 
