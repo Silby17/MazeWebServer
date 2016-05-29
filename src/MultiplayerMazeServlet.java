@@ -13,6 +13,8 @@ public class MultiplayerMazeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String mazeName = request.getParameter("mazeName");
+
         ServletContext context = getServletContext();
         Object att = context.getAttribute("connection");
         ServerConnectionManager manager = (ServerConnectionManager)att;

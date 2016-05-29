@@ -27,7 +27,7 @@
         <button id="getMazeBtn" type="button" name="action" value="StartNewGame">Start New Game</button>
         <button type="submit" name="action" value="Suggestion">Get Suggestion</button>
         <button type="submit" name="action" value="Return">Return to Main Menu</button>
-        <input type="text" name="inputMazeName" placeholder="Enter Maze Name">
+        <input type="text" id="inputMazeName" placeholder="Enter Maze Name">
     </form>
 </div>
 
@@ -46,10 +46,11 @@
     });
 
     function getMaze(){
-        $.getJSON("MultiplayerMazeServlet", function(data){
+        var mazeName = $('#inputMazeName').val();
+        var nameToPAss = {mazeName : mazeName};
+        $.getJSON("MultiplayerMazeServlet", nameToPAss , function(data){
             if (data.multiMaze != current)
                 mazeFromServer = data.multiMaze;
-            console.log(mazeFromServer.Name);
             console.log(mazeFromServer);
             stopJSONCheck();
         })
