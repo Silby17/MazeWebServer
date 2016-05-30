@@ -23,8 +23,8 @@
 </ul>
 
 
-<div class="btn-group" style="float: left" >
-    <form action="SinglePlayerServlet" method="post">
+<div class="btn-group" style="float: left; margin-left:40%" >
+    <form action="SinglePlayerServlet" method="post" style="display: inline">
         <button id="getMazeBtn" type="button" name="action" value="StartNewGame">Start New Game</button>
         <button type="submit" name="action" value="Suggestion">Get Suggestion</button>
         <button type="submit" name="action" value="Return">Return to Main Menu</button>
@@ -71,12 +71,13 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
             stopJSONCheck();
         })
     }
+
     function stopJSONCheck() {
         clearInterval(checkInterval);
         $('.loader').hide();
         gameInProgress = true;
-            var ob = JSON.parse(mazeFromServer);
-        DrawMaze(ob.Maze, 790, 460);
+        var ob = JSON.parse(mazeFromServer);
+        DrawMaze(ob.Maze, ob.Start.Row, ob.Start.Col, ob.End.Row, ob.End.Col);
     }
 </script>
 </body>
