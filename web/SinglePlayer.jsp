@@ -40,6 +40,7 @@
     }
 %>
 
+
 <!--The definitions of the script sources-->
 <script src = "MazeActions.js"></script>
 <script src="./jquery-2.2.4.js"></script>
