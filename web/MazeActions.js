@@ -7,6 +7,8 @@ imageObj.style.position= 'relative';
 imageObj.style.left = '470px';
 imageObj.style.top = '100px';
 
+
+
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY) {
  window.addEventListener("keydown", move);
@@ -136,5 +138,4 @@ function move(e) {
  }
 }
 document.getElementById("myImg").style.visibility = "hidden";
-//DrawMaze("0010101110100010101010111010001000101011101010101010101110101001110011110011110011110011110011110011",0,0,5,5);
 window.addEventListener("keydown", move);
