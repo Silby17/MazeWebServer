@@ -46,6 +46,7 @@ ul.userInfo {
     position: relative;
     display: inline-block;
     vertical-align: middle;
+    float: left;
 }
 
 

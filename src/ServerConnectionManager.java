@@ -4,19 +4,13 @@ import java.net.Socket;
 public class ServerConnectionManager {
     private Socket socket;
     private String IP;
-    private int port;
+    private int PORT;
     private boolean connected;
 
 
-    /*********************************************************************
-     * This method is will set the members
-     * @param ip - the IP address
-     * @param port - the port to listen to
-     ********************************************************************/
-    public ServerConnectionManager(String ip, int port){
-        this.IP = ip;
-        this.port = port;
-        this.connected = false;
+
+    public ServerConnectionManager(){
+        readConfigInfo();
     }
 
 
@@ -26,7 +20,7 @@ public class ServerConnectionManager {
     public void connect(){
         BufferedReader in = null;
         try{
-            socket = new Socket(this.IP, this.port);
+            socket = new Socket(this.IP, this.PORT);
             connected = true;
             in = new BufferedReader(new InputStreamReader(
                     socket.getInputStream()));
@@ -62,5 +56,23 @@ public class ServerConnectionManager {
         }
         toSend = msg.toString();
         return rec;
+    }
+
+
+    /*******************************************************************
+     * This method will read the IP and PORT from the cinfig.txt file
+     * for connection with the server
+     ******************************************************************/
+    private void readConfigInfo(){
+        InputStream in = getClass().getResourceAsStream("config.txt");
+        Reader nr = null;
+        BufferedReader br = null;
+        try{
+            br = new BufferedReader(new InputStreamReader(in));
+            IP = br.readLine();
+            PORT = Integer.parseInt(br.readLine());
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 }

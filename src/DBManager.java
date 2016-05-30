@@ -37,10 +37,9 @@ public class DBManager {
      * @return = True if they are correct and False if incorrect
      ******************************************************************/
     public boolean checkLoginDetails(String userName, String pass){
-        System.out.println("User Map size: " + userMap.size());
-        System.out.println("To check: " + userName + "  " + pass);
         if(userMap.get(userName) == null)
         {
+            System.out.println("Returning false from check");
             return false;
         }
         else{

@@ -25,10 +25,14 @@ public class LoginServlet extends HttpServlet {
         DBManager manager = (DBManager)att;
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println("Username: " + userName + " Password: " + password);
+
         if(manager.checkLoginDetails(userName, password)){
             User currentUser = manager.getUser(userName);
+            currentUser.getConnectionManager().connect();
             HttpSession session = request.getSession();
+
+            System.out.println("SessionID == " + session.getId());
+            session.setAttribute("user", currentUser);
             session.setAttribute("username", userName);
             session.setAttribute("icon", currentUser.getIcon());
             response.sendRedirect("/MenuServlet");

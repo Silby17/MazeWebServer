@@ -34,23 +34,30 @@
 <script src="./jquery-2.2.4.js"></script>
 <script>
     var current = 0;
+    var gameName;
     var checkInterval;
     var mazeFromServer;
+    var gameInPlay = false;
 
     $(function(){
         $('#getMazeBtn').click(function(){
+            if(gameInPlay == true){
+                if(confirm('Game in Play, are you sure you want to start again?')){
+                }
+            }
             if(confirm('Are you sure you want to start a new Game?')){
-                checkInterval = setInterval(function() {getMaze()}, 5000);
+                checkInterval = setInterval(function() {getMaze()}, 15000);
             }
         });
     });
 
     function getMaze(){
-        var mazeName = $('#inputMazeName').val();
-        var nameToPAss = {mazeName : mazeName};
-        $.getJSON("MultiplayerMazeServlet", nameToPAss , function(data){
+        gameName = $('#inputMazeName').val();
+        var nameToPass = {mazeName : gameName};
+        $.getJSON("MultiplayerMazeServlet", nameToPass , function(data){
             if (data.multiMaze != current)
                 mazeFromServer = data.multiMaze;
+            gameInPlay = true;
             console.log(mazeFromServer);
             stopJSONCheck();
         })
@@ -58,7 +65,7 @@
     function stopJSONCheck() {
         clearInterval(checkInterval);
         var ob = JSON.parse(mazeFromServer);
-        DrawMaze(ob.Maze, 790, 460);
+        console.log(ob);
     }
 </script>
 
