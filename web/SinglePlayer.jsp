@@ -36,7 +36,7 @@
 <!--The following code will get the icon from the current users session-->
 <%
     {%><img id="myImg" src="<%=icon%>" width="40" height="40"
-            style="float:left" align="center"/> <%
+            style="float:left" visibility = "hidden" align="center"/> <%
     }
 %>
 

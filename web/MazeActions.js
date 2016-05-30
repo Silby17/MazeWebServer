@@ -1,6 +1,6 @@
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
-var mazeWidth = 870;
+var mazeWidth = 830;
 var mazeHeight = 500;
 var imageObj = document.getElementById("myImg");
 imageObj.style.position= 'relative';
@@ -41,8 +41,8 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
  imageObj.style.visibility = 'visible';
  //color end point
  context.fillStyle = "#3045BF";
- endx = (430 + (40 * endY));
- endy = (100 + (40 * endX));
+ var endx = (430 + (40 * endY));
+ var endy = (100 + (40 * endX));
  context.fillRect(endx, endy, 40, 40);
 }
 
@@ -60,11 +60,7 @@ function canMoveTo(destX, destY) {
 
 //show win alert
 function win() {
- context.font = "40px Arial";
- context.fillStyle = "blue";
- context.textAlign = "center";
- context.textBaseline = "middle";
- context.fillText("Congratulations!", canvas.width / 2, canvas.height / 2);
+ alert("Congratulations!");
  window.removeEventListener("keydown", move);
 }
 
@@ -123,7 +119,7 @@ function move(e) {
      // arrow right key
   case 39:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top));
-   color = context.getImageData((parseInt(imageObj.style.left) +40), parseInt(imageObj.style.top), 40, 40);
+   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top), 40, 40);
    blue = parseInt(color.data[2]);
    if(movingAllowed == 1 && blue == 255) {
     document.getElementById("myImg").style.visibility = "hidden";
