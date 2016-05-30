@@ -51,7 +51,7 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
     var checkInterval;
     var mazeFromServer;
     var pageLoaderInterval;
-
+    var gameInProgress = false;
 
     $(function(){
         $('#getMazeBtn').click(function(){
@@ -75,6 +75,7 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
     function stopJSONCheck() {
         clearInterval(checkInterval);
         $('.loader').hide();
+        gameInProgress = true;
             var ob = JSON.parse(mazeFromServer);
         DrawMaze(ob.Maze, ob.Start.Row, ob.Start.Col, ob.End.Row, ob.End.Col);
     }
