@@ -43,6 +43,7 @@
         $('#getMazeBtn').click(function(){
             if(gameInPlay == true){
                 if(confirm('Game in Play, are you sure you want to start again?')){
+                    //TODO send close command
                 }
             }
             if(confirm('Are you sure you want to start a new Game?')){
