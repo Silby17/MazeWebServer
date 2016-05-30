@@ -1,7 +1,7 @@
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
-var mazeWidth = 790;
-var mazeHeight = 460;
+var mazeWidth = 870;
+var mazeHeight = 500;
 var imageObj = document.getElementById("myImg");
 imageObj.style.position= 'relative';
 imageObj.style.left = '470px';
@@ -41,8 +41,8 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
  imageObj.style.visibility = 'visible';
  //color end point
  context.fillStyle = "#3045BF";
- endx = (390 + (40 * endY));
- endy = (60 + (40 * endX));
+ endx = (430 + (40 * endY));
+ endy = (100 + (40 * endX));
  context.fillRect(endx, endy, 40, 40);
 }
 
