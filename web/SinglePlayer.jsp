@@ -2,6 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/mainMenu.css">
+    <title>Single Player Game</title>
 </head>
 <body background="/images/bg.jpg">
 <div class="loader" style="display: none"></div>
@@ -24,7 +25,7 @@
 
 
 <div class="btn-group" style="float: left; margin-left:40%" >
-    <form action="SinglePlayerServlet" method="post" style="display: inline">
+    <form action="SinglePlayerServlet" method="post">
         <button id="getMazeBtn" type="button" name="action" value="StartNewGame">Start New Game</button>
         <button type="submit" name="action" value="Suggestion">Get Suggestion</button>
         <button type="submit" name="action" value="Return">Return to Main Menu</button>
