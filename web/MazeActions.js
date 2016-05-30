@@ -7,9 +7,10 @@ imageObj.style.position= 'relative';
 imageObj.style.left = '470px';
 imageObj.style.top = '100px';
 
+//imageObj.id = "myImg";
 
 //gets a string and makes a grid out of it.
-function DrawMaze(stringMaze, startX, startY, endX, endY) {
+function DrawMaze(stringMaze, endX, endY) {
  context.rect(430,100,400,400);
  context.stroke();
  var x = 430, y = 100, index =0;
@@ -36,21 +37,12 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
   y = y + 40;
   x = 430;
  }
- //place start image
- var x = (390 + (startY * 40));
- var y = (60 + (startX * 40));
- imageObj.style.left = parseInt(x)  + 'px';
- imageObj.style.top = parseInt(y) + 'px';
- imageObj.style.visibility = 'visible';
- //color end point
- context.fillStyle = "#3045BF";
- context.fillRect((390 + (40 * endY)), (60 + (40 * endX)), 40, 40);
 }
 
 function canMoveTo(destX, destY) {
  var canMove ; // 1 means: player can move
  // check whether the player would move inside the bounds of the canvas
- if (destX >= 430 && destX <= mazeWidth - 40 && destY >= 100 && destY <= mazeHeight - 40) {
+ if (destX >= 470 && destX <= mazeWidth - 40 && destY >= 100 && destY <= mazeHeight - 40) {
   canMove = 1;
  }
  else {
@@ -70,6 +62,7 @@ function Win(newX, newY) {
 }
 
 
+
 function move(e) {
  var movingAllowed;
  var color, blue;
@@ -78,10 +71,9 @@ function move(e) {
      // arrow up key
   case 38:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left), parseInt(imageObj.style.top) - 40);
-   color = context.getImageData((parseInt(imageObj.style.left) - 40), (parseInt(imageObj.style.top) - 40), 40, 40);
+   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) - 40, 40, 40);
    blue = parseInt(color.data[2]);
-      //if blue pixels are 255 mines it is white
-   if(movingAllowed == 1 && blue == 255) {
+   if(movingAllowed == 1 && blue != 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.top = parseInt(imageObj.style.top) - 40 + 'px';
     imageObj.style.visibility = 'visible';
@@ -90,39 +82,47 @@ function move(e) {
      // arrow left key
   case 37:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top));
-   color = context.getImageData(parseInt(imageObj.style.left) - 80, parseInt(imageObj.style.top), 40, 40);
+   color = context.getImageData(parseInt(imageObj.style.left) - 40, parseInt(imageObj.style.top), 40, 40);
    blue = parseInt(color.data[2]);
-   if(movingAllowed == 1 && blue == 255) {
+   if(movingAllowed == 1 && blue != 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.left = parseInt(imageObj.style.left) - 40 + 'px';
     imageObj.style.visibility = 'visible';
+    break;
    }
-   break;
      // arrow down key
   case 40:
+   alert("6666");
    movingAllowed = canMoveTo(parseInt(imageObj.style.left), parseInt(imageObj.style.top + 40));
-   color = context.getImageData((parseInt(imageObj.style.left)- 40), (parseInt(imageObj.style.top) +40)  , 40, 40);
+   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top) + 40, 40, 40);
    blue = parseInt(color.data[2]);
-   if(movingAllowed == 1 && blue == 255) {
+   if(movingAllowed == 1 && blue != 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.top = parseInt(imageObj.style.top) + 40 + 'px';
     imageObj.style.visibility = 'visible';
+    break;
    }
-   break;
      // arrow right key
   case 39:
    movingAllowed = canMoveTo(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top));
-   color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top), 40, 40);
+   color = context.getImageData(parseInt(imageObj.style.left) + 40, parseInt(imageObj.style.top), 40, 40);
    blue = parseInt(color.data[2]);
-   if(movingAllowed == 1 && blue == 255) {
+   if(movingAllowed == 1 && blue != 255) {
     document.getElementById("myImg").style.visibility = "hidden";
     imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
     imageObj.style.visibility = 'visible';
+    break;
    }
-   break;
  }
 }
-DrawMaze("0010101110100010101010111010001000101011101010101010101110101001110011110011110011110011110011110011",0,0,5,5);
-//document.getElementById("myImg").style.visibility = "hidden";
+
+function move1(e){
+ document.getElementById("myImg").style.visibility = "hidden";
+ imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
+ imageObj.style.visibility = 'visible';
+
+}
+
+//PlacePlayerIcon(currX,currY);
 window.addEventListener("keydown", move);
 

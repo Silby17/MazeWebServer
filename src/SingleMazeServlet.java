@@ -27,8 +27,8 @@ public class SingleMazeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         ServletContext context = getServletContext();
-        Object att = context.getAttribute("connection");
-        ServerConnectionManager con = (ServerConnectionManager) att;
+        User currentUSer = (User)request.getSession().getAttribute("user");
+
 
         //Makes a random number for the Maze Name
         Random rand = new Random();
@@ -38,7 +38,7 @@ public class SingleMazeServlet extends HttpServlet {
         singleCommand += number + " " + 1;
 
         //Sends the command for a new maze to the server
-        String mazeFromServer = con.sendToServer(singleCommand);
+        String mazeFromServer = currentUSer.getConnectionManager().sendToServer(singleCommand);
         String mazeString;
 
         //Checks if the JSON received is in the correct format

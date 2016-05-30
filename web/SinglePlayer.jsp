@@ -75,8 +75,7 @@ a new maze, it will then convert it to JSON object and Draw the maze-->
         clearInterval(checkInterval);
         $('.loader').hide();
             var ob = JSON.parse(mazeFromServer);
-      //  DrawMaze(ob.Maze, 790, 460);
-        DrawMaze(ob.Maze, ob.Start.Row, ob.Start.Col, ob.End.Row, ob.End.Col);
+        DrawMaze(ob.Maze, 790, 460);
     }
 </script>
 </body>
