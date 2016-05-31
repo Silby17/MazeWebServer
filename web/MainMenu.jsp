@@ -33,7 +33,7 @@
 </ul>
 
 <div class="form-bg">
-    <form action="MenuServlet" method="post">
+    <form action="/controllers.MenuServlet" method="post">
         <h2>Main Menu</h2>
         <button type="submit" name="action" value="single">Single Player</button>
         <button type="submit" name="action" value="multiplayer">Multiplayer</button>
