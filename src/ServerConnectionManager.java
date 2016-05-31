@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.Socket;
+import java.nio.Buffer;
 
 public class ServerConnectionManager {
     private Socket socket;
@@ -42,7 +43,7 @@ public class ServerConnectionManager {
     public String sendToServer(String msg){
         PrintWriter out = null;
         BufferedReader in = null;
-        String toSend;
+
         String rec = "";
         try{
             out = new PrintWriter(socket.getOutputStream(), true);
@@ -54,8 +55,33 @@ public class ServerConnectionManager {
         }catch (IOException e){
             e.printStackTrace();
         }
-        toSend = msg.toString();
         return rec;
+    }
+
+    public void sendRequest(String s){
+        PrintWriter out = null;
+        try{
+            out = new PrintWriter(socket.getOutputStream(), true);
+            out.println(s);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+
+    public String getMsgFromServer(){
+        BufferedReader in = null;
+        String received = "";
+
+        try{
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            char[] rec = new char[1024];
+            in.read(rec);
+            received = new String(rec);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return received;
     }
 
 
