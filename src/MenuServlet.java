@@ -26,7 +26,7 @@ public class MenuServlet extends HttpServlet {
             response.sendRedirect("/SinglePlayerServlet");
         }
         else if(buttonClicked.equals("multiplayer"))
-            response.sendRedirect("/MultiplayerServlet");
+            response.sendRedirect("/EnterGameName.jsp");
     }
 
     /************************************************************************
