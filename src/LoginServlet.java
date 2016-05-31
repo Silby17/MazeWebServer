@@ -35,7 +35,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("user", currentUser);
             session.setAttribute("username", userName);
             session.setAttribute("icon", currentUser.getIcon());
-            response.sendRedirect("/MenuServlet");
+            response.sendRedirect("controllers.MenuServlet");
         }
         else{
             request.setAttribute("error", true);

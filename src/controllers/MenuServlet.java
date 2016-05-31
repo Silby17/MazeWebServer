@@ -1,3 +1,5 @@
+package controllers;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,7 @@ import java.io.IOException;
 /*********************************************************************
  * This Class is the Servlet that will deal with the Main Game Menu
  *********************************************************************/
-@WebServlet(name = "MenuServlet", urlPatterns = {"/MenuServlet"})
+@WebServlet(name = "controllers.MenuServlet", urlPatterns = {"/controllers.MenuServlet"})
 public class MenuServlet extends HttpServlet {
 
     /******************************************************************
