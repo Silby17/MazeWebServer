@@ -25,9 +25,9 @@
 
 
 <div class="btn-group" style="float: left" >
-    <form action="MultiplayerMazeServlet" method="post">
+    <form action="SinglePlayerServlet" method="post">
         <button id="getMazeBtn" type="button" name="action" value="StartNewGame">Start New Game</button>
-        <button type="submit" name="action" value="Suggestion">Get Suggestion</button>
+        <button id="getSolution" type="button" name="action">Get Suggestion</button>
         <button type="submit" name="action" value="Return">Return to Main Menu</button>
         <input type="text" id="inputMazeName"  style="visibility: hidden" placeholder="Enter Maze Name">
     </form>
@@ -41,47 +41,9 @@
     }
 %>
 
-
 <!--The definitions of the script sources-->
 <script src = "MazeActions.js"></script>
 <script src="./jquery-2.2.4.js"></script>
-
-<!--The following code will check for button click to get new maze
-it will then start checking the server every 3seconds if there is
-a new maze, it will then convert it to JSON object and Draw the maze-->
-<script>
-    var current = 0;
-    var checkInterval;
-    var mazeFromServer;
-    var pageLoaderInterval;
-    var gameInProgress = false;
-
-    $(function(){
-        $('#getMazeBtn').click(function(){
-            if(confirm('Are you sure you want to start a new Game?')){
-                $('.loader').show();
-                checkInterval = setInterval(function() {getMaze()}, 5000);
-            }
-        });
-    });
-
-    function getMaze(){
-        $.getJSON("SingleMazeServlet", function(data){
-            if (data.singleMaze != current)
-                mazeFromServer = data.singleMaze;
-            console.log(mazeFromServer.Name);
-            console.log(mazeFromServer);
-            stopJSONCheck();
-        })
-    }
-
-    function stopJSONCheck() {
-        clearInterval(checkInterval);
-        $('.loader').hide();
-        gameInProgress = true;
-        var ob = JSON.parse(mazeFromServer);
-        DrawMaze(ob.Maze, ob.Start.Row, ob.Start.Col, ob.End.Row, ob.End.Col);
-    }
-</script>
+<script src="SinglePlayer.js"></script>
 </body>
 </html>
