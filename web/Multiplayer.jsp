@@ -30,8 +30,14 @@
     </form>
 </div>
 <canvas id="myCanvas" width="1400" height="550"></canvas>
+<!--The following code will get the icon from the current users session-->
+<%
+    {%><img id="myImg" src="<%=icon%>" width="40" height="40"
+            style="float:left" style="visibility: hidden" align="center"/> <%
+    }
+%>
 <script src="./jquery-2.2.4.js"></script>
-<script src = "MultiActions.js"></script>
+<script src = "MultiAction.js"></script>
 <script>
     var current = 0;
     var gameName;

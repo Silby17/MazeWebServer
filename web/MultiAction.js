@@ -6,40 +6,46 @@ var imageObj = document.getElementById("myImg");
 imageObj.style.position= 'relative';
 imageObj.style.left = '470px';
 imageObj.style.top = '100px';
-
+var borderx = 200;
+var bordery = 100;
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY) {
     window.addEventListener("keydown", move);
-    context.rect(startX,startY,400,400);
+    context.rect(borderx,bordery,400,400);
     context.stroke();
-    var x = 430, y = 100, index =0;
-//row
+    context.rect(borderx + 600,bordery,400,400);
+    context.stroke();
+    var x = borderx, y = bordery, index =0;
+    //row
     for (var i = 0; i < 10; i++) {
         //go over the col, if 0 draw white cube if 1 draw black cube
         for (var j = 0; j < 10; j++) {
             if(stringMaze[index] == '1') {
                 context.fillStyle = "#B6E9FA";
                 context.fillRect(x, y, 40, 40);
+                context.fillRect(x + 600, y, 40, 40);
             }
             else {
                 context.fillStyle = "white";
                 context.fillRect(x, y, 40, 40);
+                context.fillRect(x + 600, y, 40, 40);
+
             }
             x = x + 40;
             index++;
         }
         y = y + 40;
-        x = 430;
+        x = borderx;
     }
     //place start image
-    var x = (470 + (startY * 40));
+    var x = (240 + (startY * 40));
     var y = (100 + (startX * 40));
     imageObj.style.left = parseInt(x)  + 'px';
     imageObj.style.top = parseInt(y) + 'px';
     imageObj.style.visibility = 'visible';
     //color end point
     context.fillStyle = "#3045BF";
-    var endx = (430 + (40 * endY));
+    var endx = (200 + (40 * endY));
     var endy = (100 + (40 * endX));
     context.fillRect(endx, endy, 40, 40);
 }
@@ -47,7 +53,7 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
 function canMoveTo(destX, destY) {
     var canMove ; // 1 means: player can move
     // check whether the player would move inside the bounds of the canvas
-    if (destX >= 430 && destX <= mazeWidth - 40 && destY >= 100 && destY <= mazeHeight - 40) {
+    if (destX >= 200 && destX <= mazeWidth - 40 && destY >= 100 && destY <= mazeHeight - 40) {
         canMove = 1;
     }
     else {
@@ -132,4 +138,5 @@ function move(e) {
     }
 }
 document.getElementById("myImg").style.visibility = "hidden";
+DrawMaze("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011",0,0,5,5);
 window.addEventListener("keydown", move);
