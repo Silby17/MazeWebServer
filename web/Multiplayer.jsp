@@ -38,7 +38,6 @@
     var checkInterval;
     var mazeFromServer;
     var gameInPlay = false;
-
     $(function(){
         $('#getMazeBtn').click(function(){
             if(gameInPlay == true){
@@ -51,7 +50,6 @@
             }
         });
     });
-
     function getMaze(){
         gameName = $('#inputMazeName').val();
         var nameToPass = {mazeName : gameName};
@@ -69,6 +67,5 @@
         console.log(ob);
     }
 </script>
-
 </body>
 </html>
