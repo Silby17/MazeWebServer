@@ -7,8 +7,6 @@ imageObj.style.position= 'relative';
 imageObj.style.left = '470px';
 imageObj.style.top = '100px';
 
-
-
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY) {
  window.addEventListener("keydown", move);

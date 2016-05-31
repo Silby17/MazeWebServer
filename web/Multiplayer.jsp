@@ -5,7 +5,6 @@
     <title>Multiplayer</title>
 </head>
 <body background="/images/bg.jpg">
-
 <ul style="float:right">
     <li><button>Back</button></li>
 
@@ -27,11 +26,12 @@
         <button id="getMazeBtn" type="button" name="action" value="StartNewGame">Start New Game</button>
         <button type="submit" name="action" value="Suggestion">Get Suggestion</button>
         <button type="submit" name="action" value="Return">Return to Main Menu</button>
-        <input type="text" id="inputMazeName" placeholder="Enter Maze Name">
+        <input type="text" id="inputMazeName"  placeholder="Enter Maze Name">
     </form>
 </div>
-
+<canvas id="myCanvas" width="1400" height="550"></canvas>
 <script src="./jquery-2.2.4.js"></script>
+<script src = "MultiActions.js"></script>
 <script>
     var current = 0;
     var gameName;
