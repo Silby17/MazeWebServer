@@ -8,8 +8,6 @@ public class ServerConnectionManager {
     private int PORT;
     private boolean connected;
 
-
-
     public ServerConnectionManager(){
         readConfigInfo();
     }
@@ -58,6 +56,11 @@ public class ServerConnectionManager {
         return rec;
     }
 
+
+    /*********************************************************************
+     * This Method will send a request, ie a string to the maze Server
+     * @param s - the command to send
+     ********************************************************************/
     public void sendRequest(String s){
         PrintWriter out = null;
         try{
@@ -69,10 +72,13 @@ public class ServerConnectionManager {
     }
 
 
+    /*********************************************************************
+     * This method will receive any input stream from the server
+     * @return - msg from the server
+     ********************************************************************/
     public String getMsgFromServer(){
         BufferedReader in = null;
         String received = "";
-
         try{
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             char[] rec = new char[1024];
