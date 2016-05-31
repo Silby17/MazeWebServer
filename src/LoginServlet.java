@@ -30,8 +30,6 @@ public class LoginServlet extends HttpServlet {
             User currentUser = manager.getUser(userName);
             currentUser.getConnectionManager().connect();
             HttpSession session = request.getSession();
-
-            System.out.println("SessionID == " + session.getId());
             session.setAttribute("user", currentUser);
             session.setAttribute("username", userName);
             session.setAttribute("icon", currentUser.getIcon());
