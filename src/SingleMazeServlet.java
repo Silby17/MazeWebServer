@@ -1,13 +1,10 @@
 import org.json.simple.JSONObject;
-
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.InterruptedIOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
@@ -26,9 +23,7 @@ public class SingleMazeServlet extends HttpServlet {
      ***********************************************************************/
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ServletContext context = getServletContext();
-        User currentUSer = (User)request.getSession().getAttribute("user");
-
+        User currentUser = (User)request.getSession().getAttribute("user");
 
         //Makes a random number for the Maze Name
         Random rand = new Random();
@@ -38,7 +33,7 @@ public class SingleMazeServlet extends HttpServlet {
         singleCommand += number + " " + 1;
 
         //Sends the command for a new maze to the server
-        String mazeFromServer = currentUSer.getConnectionManager().sendToServer(singleCommand);
+        String mazeFromServer = currentUser.getConnectionManager().sendToServer(singleCommand);
         String mazeString;
 
         //Checks if the JSON received is in the correct format
@@ -59,6 +54,5 @@ public class SingleMazeServlet extends HttpServlet {
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-    }
+            throws ServletException, IOException {}
 }
