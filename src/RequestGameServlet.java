@@ -5,8 +5,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/*****************************************************************************
+ * This Servlet will be the controller for the JSP that will send the Game
+ * Name for a multiplayer game to the server
+ *****************************************************************************/
 @WebServlet(name = "RequestGameServlet", urlPatterns = {"/RequestGameServlet"})
 public class RequestGameServlet extends HttpServlet {
+
+    /**************************************************************************
+     * This method will send the Multiplayer game request to the server
+     * @param request - request received
+     * @param response - response
+     * @throws ServletException - if the servlet fails
+     * @throws IOException - If writing to response fails
+     *************************************************************************/
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String gameName = request.getParameter("gameName");
@@ -17,8 +29,7 @@ public class RequestGameServlet extends HttpServlet {
         response.sendRedirect("/Multiplayer.jsp");
     }
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
 
-    }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {}
 }
