@@ -39,17 +39,14 @@ public class DBManager {
     public boolean checkLoginDetails(String userName, String pass){
         if(userMap.get(userName) == null)
         {
-            System.out.println("Returning false from check");
             return false;
         }
         else{
             if(userMap.get(userName).getPassword().toLowerCase().
                     equals(pass.toLowerCase())){
-                System.out.println("return true");
                 return true;
             }
             else{
-                System.out.println("return false");
                 return false;
             }
         }
