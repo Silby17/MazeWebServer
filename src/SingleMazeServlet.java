@@ -30,7 +30,7 @@ public class SingleMazeServlet extends HttpServlet {
         int randNum = rand.nextInt(40);
         String number = Integer.toString(randNum);
         String singleCommand = "1 Game";
-        singleCommand += number + " " + 1;
+        singleCommand += number + " " + 0;
 
         //Sends the command for a new maze to the server
         String mazeFromServer = currentUser.getConnectionManager().sendToServer(singleCommand);
