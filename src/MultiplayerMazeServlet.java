@@ -1,70 +1,93 @@
 import org.json.simple.JSONObject;
-import javax.servlet.ServletContext;
+
+import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 
-@WebServlet(name = "MultiplayerMazeServlet", urlPatterns = {"/MultiplayerMazeServlet"})
+@WebServlet(name = "MultiplayerMazeServlet", asyncSupported = true, urlPatterns = {"/MultiplayerMazeServlet"})
 public class MultiplayerMazeServlet extends HttpServlet {
+    private AsyncContext asyncContext;
+    private ServerConnectionManager server;
 
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        String mazeName = request.getParameter("mazeName");
-        System.out.println("Maze name from request: " + mazeName);
-        mazeName = mazeName.replaceAll("(\\r|\\n|\\t)", "");
-
-        System.out.println("Done");
-        String command = "3 " + mazeName;
-        User user = (User)request.getSession().getAttribute("user");
-        System.out.println("Session ID: " + request.getSession().getId());
-
-        String multipleMaze = user.getConnectionManager().sendToServer(command);
-
-        System.out.println("MultipleMaze:");
-        System.out.println(multipleMaze);
-        JSONObject obj = new JSONObject();
-        obj.put("multiMaze", multipleMaze);
-        response.setContentType("application/json");
-        try{
-            PrintWriter out = response.getWriter();
-            out.println(obj);
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-        System.out.println("Maze has been put into Object");
-
-
-/**
-        Thread getThread = new Thread(){
-            public void run(){
-
-                JSONObject obj = new JSONObject();
-                obj.put("multiMaze", multipleMaze);
-                response.setContentType("application/json");
-                try {
-                    PrintWriter out = response.getWriter();
-                    out.println(obj);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-                System.out.println("Maze has been put into Object");
-            }
-        };
-        getThread.start();
- **/
-
+    @Override
+    public void init() throws ServletException {
+        System.out.println("INIT");
+        generator.start();
+    }
+    @Override
+    public void destroy() {
+        generator.interrupt();
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response){
+        System.out.println("doGet of MultiMazeServlet");
+        User user = (User)request.getSession().getAttribute("user");
+        this.server = user.getConnectionManager();
+        System.out.println(user.getUserName());
+        AsyncContext async = request.startAsync();
+        async.setTimeout(0);
+        asyncContext = async;
+    }
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
     }
+
+    private final Thread generator = new Thread(){
+        private int counter = 0;
+        @Override
+        public void run(){
+            System.out.println("Running run of thread");
+
+            while(!Thread.currentThread().isInterrupted()){
+                try{
+                    Thread.sleep(1000);
+                    if (asyncContext == null) {
+                        asyncContext = null;
+                        this.counter = 0;
+                    }
+                    else{
+                        System.out.println("Waiting for reply from server...");
+                        String jsonString = server.getMsgFromServer();
+                        jsonString = jsonString.replaceAll("(\\r|\\n)", "");
+
+                        int i = 520;
+                        int j = 521;
+                        boolean end = true;
+                        while(end){
+                            if(jsonString.charAt(i) == '}' && jsonString.charAt(j) == '}'){
+                                jsonString = jsonString.substring(0, j + 1);
+                                end = false;
+                            }
+                            else{
+                                i++;
+                                j++;
+                            }
+                        }
+                        JSONObject obj = new JSONObject();
+                        obj.put("multiMaze", jsonString);
+                        System.out.println("Put in object");
+                        HttpServletResponse resp = (HttpServletResponse)asyncContext.getResponse();
+                        resp.getWriter().println(obj);
+                        resp.setContentType("application/json");
+                        System.out.println("Before Complete");
+
+                        asyncContext.complete();
+                    }
+
+                }catch (IOException e){
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    };
 }

@@ -1,13 +1,12 @@
 import java.io.*;
 import java.net.Socket;
+import java.nio.Buffer;
 
 public class ServerConnectionManager {
     private Socket socket;
     private String IP;
     private int PORT;
     private boolean connected;
-
-
 
     public ServerConnectionManager(){
         readConfigInfo();
@@ -42,7 +41,7 @@ public class ServerConnectionManager {
     public String sendToServer(String msg){
         PrintWriter out = null;
         BufferedReader in = null;
-        String toSend;
+
         String rec = "";
         try{
             out = new PrintWriter(socket.getOutputStream(), true);
@@ -54,8 +53,41 @@ public class ServerConnectionManager {
         }catch (IOException e){
             e.printStackTrace();
         }
-        toSend = msg.toString();
         return rec;
+    }
+
+
+    /*********************************************************************
+     * This Method will send a request, ie a string to the maze Server
+     * @param s - the command to send
+     ********************************************************************/
+    public void sendRequest(String s){
+        PrintWriter out = null;
+        try{
+            out = new PrintWriter(socket.getOutputStream(), true);
+            out.println(s);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+
+    /*********************************************************************
+     * This method will receive any input stream from the server
+     * @return - msg from the server
+     ********************************************************************/
+    public String getMsgFromServer(){
+        BufferedReader in = null;
+        String received = "";
+        try{
+            in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            char[] rec = new char[1024];
+            in.read(rec);
+            received = new String(rec);
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        return received;
     }
 
 
