@@ -2,10 +2,12 @@ var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
 var mazeWidth = 830;
 var mazeHeight = 500;
+var arrSolved = new Array(10);
 var imageObj = document.getElementById("myImg");
 imageObj.style.position= 'relative';
 imageObj.style.left = '470px';
 imageObj.style.top = '100px';
+var currI, currJ;
 
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY) {
@@ -131,5 +133,41 @@ function move(e) {
    break;
  }
 }
+
+//The function builds a 2d array and placing the string in it.
+function SetSolveArray(stringMaze) {
+ var index = 0, i, j;
+ for (i = 0; i < 10; i++)
+  arrSolved[i] = new Array(10);
+//placing the solve string in a 2d array
+ for (i = 0; i < 10; i++) {
+  for (j = 0; j < 10; j++) {
+   arrSolved[i][j] = stringMaze[index];
+   index++;
+  }
+ }
+}
+
+//The function shows the best suggestion on screen according to current position.
+function Solve() {
+ var movingAllowed;
+ currI = parseInt(imageObj.style.left);
+ currJ = parseInt(imageObj.style.top);
+ var i = (((currI - 430)/40) - 1) ;
+ var j = (((currJ - 100)/40) - 1) ;
+ //not enough also check that the 2 is the colset to win point
+ //left
+movingAllowed = canMoveTo(currI - 40,  currJ);
+ if(2 == arrSolved[i][j]  && 1 == movingAllowed)
+ {
+    context.fillStyle = "#FC2828";
+    context.fillRect(currI - 40,  currJ, 40, 40);
+ }
+ //up
+ //down
+ //right
+}
 document.getElementById("myImg").style.visibility = "hidden";
 window.addEventListener("keydown", move);
+SetSolveArray("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011");
+Solve();

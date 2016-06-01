@@ -8,6 +8,7 @@ imageObj.style.left = '470px';
 imageObj.style.top = '100px';
 var borderx = 200;
 var bordery = 100;
+var endx,endy;
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY) {
     window.addEventListener("keydown", move);
@@ -45,8 +46,8 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
     imageObj.style.visibility = 'visible';
     //color end point
     context.fillStyle = "#3045BF";
-    var endx = (200 + (40 * endY));
-    var endy = (100 + (40 * endX));
+     endx = (200 + (40 * endY));
+     endy = (100 + (40 * endX));
     context.fillRect(endx, endy, 40, 40);
 }
 
@@ -137,6 +138,53 @@ function move(e) {
             break;
     }
 }
+
+//The function builds a 2d array and placing the string in it.
+function SetSolveArray(stringMaze) {
+    var index = 0, i, j;
+    for (i = 0; i < 10; i++)
+        arrSolved[i] = new Array(10);
+//placing the solve string in a 2d array
+    for (i = 0; i < 10; i++) {
+        for (j = 0; j < 10; j++) {
+            arrSolved[i][j] = stringMaze[index];
+            index++;
+        }
+    }
+}
+function MinDistance() {
+
+}
+
+//The function shows the best suggestion on screen according to current position.
+function Solve() {
+    alert("googd");
+    var movingAllowed, distance, minDistance = 1000;
+    currI = parseInt(imageObj.style.left);
+    currJ = parseInt(imageObj.style.top);
+    var i = (((currI - 430)/40) - 1) ;
+    var j = (((currJ - 100)/40) - 1) ;
+    //not enough also check that the 2 is the closet to win point
+    //left
+    movingAllowed = canMoveTo(currI - 40,  currJ);
+    var color = context.getImageData(parseInt(imageObj.style.left) - 80, parseInt(imageObj.style.top), 40, 40);
+    var blue = parseInt(color.data[2]);
+    if(2 == arrSolved[i][j] && 1 == movingAllowed && blue == 255)
+    {
+        distance = MinDistance();
+        if(distance < minDistance)
+        {
+            minDistance = distance;
+        }
+        context.fillStyle = "#FC2828";
+        context.fillRect(currI - 40,  currJ, 40, 40);
+    }
+    //up
+    //down
+    //right
+}
 document.getElementById("myImg").style.visibility = "hidden";
-DrawMaze("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011",0,0,5,5);
+DrawMaze("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011",0,3,5,5);
+SetSolveArray("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011");
 window.addEventListener("keydown", move);
+Solve();

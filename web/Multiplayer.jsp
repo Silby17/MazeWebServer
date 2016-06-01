@@ -24,7 +24,7 @@
 <div class="btn-group" style="float: left" >
     <form action="MultiplayerMazeServlet" method="post">
         <button id="getMazeBtn" type="button" name="action" value="StartNewGame">Start New Game</button>
-        <button type="submit" name="action" value="Suggestion">Get Suggestion</button>
+        <button type="submit" name="action"  value="Suggestion">Get Suggestion</button>
         <button type="submit" name="action" value="Return">Return to Main Menu</button>
         <input type="text" id="inputMazeName"  placeholder="Enter Maze Name">
     </form>
