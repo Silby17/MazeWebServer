@@ -7,7 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d76691a-4dda-4a9c-8dca-989e1e12b51a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GetPlayerMoveServlet.java" afterPath="$PROJECT_DIR$/src/GetPlayerMoveServlet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/LoginServlet.java" afterPath="$PROJECT_DIR$/src/LoginServlet.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Multiplayer.js" afterPath="$PROJECT_DIR$/web/Multiplayer.js" />
     </list>
     <ignored path="MazeWebServer.iws" />
@@ -64,11 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Multiplayer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Multiplayer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/Multiplayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="384">
+              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/LoginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -149,7 +160,6 @@
         <option value="$PROJECT_DIR$/src/controllers/MenuServlet.java" />
         <option value="$PROJECT_DIR$/src/ServerConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/DBManager.java" />
-        <option value="$PROJECT_DIR$/src/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/MultiplayerMazeServlet.java" />
         <option value="$PROJECT_DIR$/src/controllers/SingleSolutionServlet.java" />
         <option value="$PROJECT_DIR$/src/SingleSolutionServlet.java" />
@@ -160,6 +170,7 @@
         <option value="$PROJECT_DIR$/src/controllers/GetPlayerMoveServlet.java" />
         <option value="$PROJECT_DIR$/src/GetPlayerMoveServlet.java" />
         <option value="$PROJECT_DIR$/web/Multiplayer.js" />
+        <option value="$PROJECT_DIR$/src/LoginServlet.java" />
       </list>
     </option>
   </component>
@@ -958,7 +969,7 @@
       <workItem from="1464703603912" duration="11052000" />
       <workItem from="1464719944944" duration="6516000" />
       <workItem from="1464786916569" duration="3584000" />
-      <workItem from="1464851365724" duration="6037000" />
+      <workItem from="1464851365724" duration="6823000" />
     </task>
     <task id="LOCAL-00066" summary="Updated user info pane">
       <created>1464274030449</created>
@@ -1307,7 +1318,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="207983000" />
+    <option name="totallyTimeSpent" value="208769000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1615,13 +1626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="31" column="55" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="936">
@@ -1718,8 +1722,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/Multiplayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state relative-caret-position="384">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LoginServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="28" column="43" selection-start-line="28" selection-start-column="43" selection-end-line="28" selection-end-column="43" />
           <folding />
         </state>
       </provider>

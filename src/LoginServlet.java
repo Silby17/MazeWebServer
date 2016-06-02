@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-
+/****************************************************************************
+ * This Class will be handle the call to the servlet, will load the login
+ * page and will check the details of the users login attempt.
+ ****************************************************************************/
 @WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
 public class LoginServlet extends HttpServlet {
     @Override
@@ -17,6 +20,14 @@ public class LoginServlet extends HttpServlet {
     }
 
 
+    /*************************************************************************
+     * This Method will handle all information that was posted from the Login
+     * page after the user enters their details
+     * @param request - page request
+     * @param response - response to that page
+     * @throws ServletException if there is an error with the servelt
+     * @throws IOException - Error writing.
+     *************************************************************************/
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

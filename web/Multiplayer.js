@@ -1,6 +1,5 @@
 var current = 0;
 var mazeFromServer;
-var getMove;
 var gameInPlay = false;
 
 
