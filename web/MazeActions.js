@@ -4,9 +4,9 @@ var mazeWidth = 830;
 var mazeHeight = 500;
 var arrSolved = new Array(10);
 var imageObj = document.getElementById("myImg");
-imageObj.style.position= 'relative';
-imageObj.style.left = '470px';
-imageObj.style.top = '100px';
+//imageObj.style.position= 'relative';
+//imageObj.style.left = '470px';
+//imageObj.style.top = '100px';
 var currI, currJ;
 
 //gets a string and makes a grid out of it.
@@ -34,8 +34,8 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
   x = 430;
  }
  //place start image
- var x = (470 + (startY * 40));
- var y = (100 + (startX * 40));
+ var x = (470 + (startX * 40));
+ var y = (100 + (startY * 40));
  imageObj.style.left = parseInt(x)  + 'px';
  imageObj.style.top = parseInt(y) + 'px';
  imageObj.style.visibility = 'visible';
