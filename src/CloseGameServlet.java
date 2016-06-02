@@ -1,0 +1,33 @@
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/*****************************************************************************
+ * This class will handle the closing of the Multiplayer game with the Server
+ *****************************************************************************/
+@WebServlet(name = "CloseGameServlet")
+public class CloseGameServlet extends HttpServlet {
+
+    /*************************************************************************
+     * This method will get the name of the game from the request
+     * and send a close request to the server
+     * @param request - request from client
+     * @param response - response to send
+     * @throws ServletException
+     * @throws IOException
+     *************************************************************************/
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        User user = (User)request.getSession().getAttribute("user");
+        String fromClient = request.getParameter("gameName");
+        String closeCommand = 5 + " " + fromClient;
+        user.getConnectionManager().sendRequest(closeCommand);
+        response.sendRedirect("controllers.MenuServlet");
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {}
+}
