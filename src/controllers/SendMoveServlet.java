@@ -1,3 +1,7 @@
+package controllers;
+
+import beans.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +12,7 @@ import java.io.IOException;
 /*****************************************************************************
  * This class Will handle the sending of a players move to the server
  *****************************************************************************/
-@WebServlet(name = "SendMoveServlet", urlPatterns = {"/SendMoveServlet"})
+@WebServlet(name = "controllers.SendMoveServlet", urlPatterns = {"/controllers.SendMoveServlet"})
 public class SendMoveServlet extends HttpServlet {
 
     /**************************************************************************

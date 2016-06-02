@@ -1,7 +1,11 @@
+package controllers;
+
+import beans.DBManager;
+import beans.User;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-import java.io.*;
 
 /******************************************************************************
  * This Class will initialize the Contexts and add attributes that will be

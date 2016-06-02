@@ -1,3 +1,6 @@
+package controllers;
+
+import beans.User;
 import org.json.simple.JSONObject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +12,7 @@ import java.io.PrintWriter;
 import java.util.Random;
 
 
-@WebServlet(name = "SingleMazeServlet", urlPatterns = {"/SingleMazeServlet"})
+@WebServlet(name = "controllers.SingleMazeServlet", urlPatterns = {"/controllers.SingleMazeServlet"})
 public class SingleMazeServlet extends HttpServlet {
 
 

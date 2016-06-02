@@ -1,3 +1,5 @@
+package beans;
+
 import javax.servlet.ServletContext;
 import java.io.*;
 

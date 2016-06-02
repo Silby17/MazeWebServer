@@ -1,3 +1,5 @@
+package controllers;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,13 +11,13 @@ import java.io.IOException;
  * This controller will logout from the session and return the user to the
  * login page
  ****************************************************************************/
-@WebServlet(name = "LogoutServlet", urlPatterns = {"/LogoutServlet"})
+@WebServlet(name = "controllers.LogoutServlet", urlPatterns = {"/controllers.LogoutServlet"})
 public class LogoutServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getSession().invalidate();
-        response.sendRedirect(request.getContextPath() + "LoginServlet");
+        response.sendRedirect(request.getContextPath() + "controllers.LoginServlet");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

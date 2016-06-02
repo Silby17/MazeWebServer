@@ -1,3 +1,7 @@
+package controllers;
+
+import beans.User;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +13,7 @@ import java.io.IOException;
  * This Servlet will be the controller for the JSP that will send the Game
  * Name for a multiplayer game to the server
  *****************************************************************************/
-@WebServlet(name = "RequestGameServlet", urlPatterns = {"/RequestGameServlet"})
+@WebServlet(name = "controllers.RequestGameServlet", urlPatterns = {"/controllers.RequestGameServlet"})
 public class RequestGameServlet extends HttpServlet {
 
     /**************************************************************************

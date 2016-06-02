@@ -1,3 +1,8 @@
+package controllers;
+
+import beans.DBManager;
+import beans.User;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +16,7 @@ import java.io.PrintWriter;
 /***************************************************************************
  * This class is Responsible for adding a new user to the application
  ***************************************************************************/
-@WebServlet(name = "NewUserFormServlet", urlPatterns = {"/NewUserFormServlet"})
+@WebServlet(name = "controllers.NewUserFormServlet", urlPatterns = {"/controllers.NewUserFormServlet"})
 public class NewUserFormServlet extends HttpServlet {
 
 
@@ -53,7 +58,7 @@ public class NewUserFormServlet extends HttpServlet {
         }
 
         //If all boxes have been filled out then extract the all the info
-        //and create a new User to be added to the DataBase
+        //and create a new beans.User to be added to the DataBase
         else{
             User newUser = new User(usrName, pass, name, email, icon += ".png");
             ServletContext context = getServletContext();
@@ -61,7 +66,7 @@ public class NewUserFormServlet extends HttpServlet {
             DBManager manager = (DBManager)att;
             manager.addUser(newUser);
             HttpSession session = request.getSession();
-            response.sendRedirect("/LoginServlet");
+            response.sendRedirect("/controllers.LoginServlet");
         }
     }
 

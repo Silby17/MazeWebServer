@@ -1,3 +1,5 @@
+package controllers;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,8 +10,8 @@ import java.io.IOException;
 /****************************************************************************
  * This class will handle button clicks on the SinglePlayer window
  ****************************************************************************/
-@WebServlet(name = "SinglePlayerButtonHandlerServlet",
-        urlPatterns = {"/SinglePlayerButtonHandlerServlet"})
+@WebServlet(name = "controllers.SinglePlayerButtonHandlerServlet",
+        urlPatterns = {"/controllers.SinglePlayerButtonHandlerServlet"})
 public class SinglePlayerButtonHandlerServlet extends HttpServlet {
 
     /*************************************************************************

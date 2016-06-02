@@ -1,9 +1,13 @@
+package beans;
+
+import beans.User;
+
 import java.io.*;
 import java.util.HashMap;
 
 
 /*************************************************************
- * This Class will deal with the User Database,
+ * This Class will deal with the beans.User Database,
  * it will add anew users and check if the login details
  * are correct for an existing user.
  ************************************************************/

@@ -1,3 +1,5 @@
+package controllers;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,7 @@ import java.io.IOException;
 /*****************************************************************************
  * This will call the Multiplayer jsp file
  ****************************************************************************/
-@WebServlet(name = "MultiplayerServlet", urlPatterns = {"/MultiplayerServlet"})
+@WebServlet(name = "controllers.MultiplayerServlet", urlPatterns = {"/controllers.MultiplayerServlet"})
 public class MultiplayerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {}

@@ -1,3 +1,6 @@
+package controllers;
+
+import beans.User;
 import org.json.simple.JSONObject;
 
 import javax.servlet.ServletException;
@@ -8,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "GetMultiMazeServlet", urlPatterns = {"/GetMultiMazeServlet"})
+@WebServlet(name = "controllers.GetMultiMazeServlet", urlPatterns = {"/controllers.GetMultiMazeServlet"})
 public class GetMultiMazeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

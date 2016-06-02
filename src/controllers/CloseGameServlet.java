@@ -1,4 +1,6 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
+package controllers;
+
+import beans.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,7 +12,7 @@ import java.io.IOException;
 /*****************************************************************************
  * This class will handle the closing of the Multiplayer game with the Server
  *****************************************************************************/
-@WebServlet(name = "CloseGameServlet", urlPatterns = {"/CloseGameServlet"})
+@WebServlet(name = "controllers.CloseGameServlet", urlPatterns = {"/controllers.CloseGameServlet"})
 public class CloseGameServlet extends HttpServlet {
 
     /*************************************************************************

@@ -1,3 +1,8 @@
+package controllers;
+
+import beans.DBManager;
+import beans.User;
+
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,7 +16,7 @@ import java.io.IOException;
  * This Class will be handle the call to the servlet, will load the login
  * page and will check the details of the users login attempt.
  ****************************************************************************/
-@WebServlet(name = "LoginServlet", urlPatterns = {"/LoginServlet"})
+@WebServlet(name = "controllers.LoginServlet", urlPatterns = {"/controllers.LoginServlet"})
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

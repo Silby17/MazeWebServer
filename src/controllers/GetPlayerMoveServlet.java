@@ -1,3 +1,6 @@
+package controllers;
+
+import beans.User;
 import org.json.simple.JSONObject;
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
@@ -13,8 +16,8 @@ import java.io.PrintWriter;
  * This Servlet controller will be in charge of getting the other players move
  * asynchronously from the server
  ****************************************************************************/
-@WebServlet(name = "GetPlayerMoveServlet", asyncSupported = true,
-        urlPatterns = {"/GetPlayerMoveServlet"})
+@WebServlet(name = "controllers.GetPlayerMoveServlet", asyncSupported = true,
+        urlPatterns = {"/controllers.GetPlayerMoveServlet"})
 public class GetPlayerMoveServlet extends HttpServlet {
 
     /************************************************************************
