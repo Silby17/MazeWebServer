@@ -18,7 +18,7 @@ $(function start(){
 This will check with the servlet if there is a new JSON object
  */
 function getMaze(){
-    $.getJSON("GetMultiMazeServlet", function(data){
+    $.getJSON("controllers.GetMultiMazeServlet", function(data){
         if(data.multiMaze != 0){
             mazeFromServer = data.multiMaze;
             drawBothMazes();
@@ -48,7 +48,7 @@ opponent
  */
 function getMoveFromServer(){
     $.ajax({
-        url: 'GetPlayerMoveServlet',
+        url: 'controllers.GetPlayerMoveServlet',
         type: 'GET',
         dataType: 'json',
         cache: false,
@@ -81,7 +81,7 @@ This will send the ajax object to the CloseGameServlet using POST
 function closeGame(){
     var name = {"gameName" : nameOfGame};
     $.ajax({
-        url: 'CloseGameServlet',
+        url: 'controllers.CloseGameServlet',
         type: 'POST',
         data: name
     })

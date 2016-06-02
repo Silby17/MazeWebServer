@@ -6,15 +6,15 @@
     <display-name>Maze Web App</display-name>
 
     <listener>
-        <listener-class>ServletContextManager</listener-class>
+        <listener-class>controllers.ServletContextManager</listener-class>
     </listener>
 
     <welcome-file-list>
-        <welcome-file>LoginServlet</welcome-file>
+        <welcome-file>controllers.LoginServlet</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>MainMenuServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>controllers.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MainMenuServlet</servlet-name>

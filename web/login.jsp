@@ -15,7 +15,7 @@
 <body>
 <div class="container">
     <div class="form-small">
-        <form action="LoginServlet" method="post">
+        <form action="controllers.LoginServlet" method="post">
             <h2>Login</h2>
             <p><input type="text" placeholder="Username" name="username"></p>
             <p><input type="password" placeholder="Password" name="password"></p>
@@ -28,7 +28,7 @@
             <button type="submit">Login</button>
         </form>
     </div>
-    <p class="forgot">New User? <a  href=\SignUpForm.html>Click here to Sign up it.</a></p>
+    <p class="forgot">New beans.User? <a  href=\SignUpForm.html>Click here to Sign up it.</a></p>
 </div>
 </body>
 </html>

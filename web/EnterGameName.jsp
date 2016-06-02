@@ -11,7 +11,7 @@
 <body>
 <div class="container">
     <div class="form-small">
-        <form action="RequestGameServlet" method="post">
+        <form action="controllers.RequestGameServlet" method="post">
             <h2>Please enter in Game Name</h2>
             <p><input type="text" placeholder="Game Name" name="gameName"></p>
             <button type="submit">Start</button>

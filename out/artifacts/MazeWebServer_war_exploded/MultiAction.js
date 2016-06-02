@@ -6,19 +6,19 @@ var imageObj = document.getElementById("myImg");
 var imageOpp = document.getElementById("oppImg");
 imageObj.style.position= 'relative';
 imageOpp.style.position= 'relative';
-var borderx = 200;
-var bordery = 100;
-var endx,endy, endx2,endy2;
+var borderX = 200;
+var borderY = 100;
+var endX, endY, endX2, endY2;
 
 
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX2, endY2) {
     window.addEventListener("keydown", move);
-    context.rect(borderx, bordery, 400, 400);
+    context.rect(borderX, borderY, 400, 400);
     context.stroke();
-    context.rect(borderx + 600, bordery, 400, 400);
+    context.rect(borderX + 600, borderY, 400, 400);
     context.stroke();
-    var x = borderx, y = bordery, index =0;
+    var x = borderX, y = borderY, index =0;
     //row
     for (var i = 0; i < 10; i++) {
         //go over the col, if 0 draw white cube if 1 draw black cube
@@ -32,13 +32,12 @@ function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX
                 context.fillStyle = "white";
                 context.fillRect(x, y, 40, 40);
                 context.fillRect(x + 600, y, 40, 40);
-
             }
             x = x + 40;
             index++;
         }
         y = y + 40;
-        x = borderx;
+        x = borderX;
     }
 
     //place start image 4 the main player
@@ -49,9 +48,9 @@ function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX
     imageObj.style.visibility = 'visible';
     //color end point
     context.fillStyle = "#3045BF";
-    endx = (200 + (40 * endX));
-    endy = (100 + (40 * endY));
-    context.fillRect(endx, endy, 40, 40);
+    endX = (200 + (40 * endX));
+    endY = (100 + (40 * endY));
+    context.fillRect(endX, endY, 40, 40);
 
     //place start image 4 the opp player
     var x = (880 + (startX2 * 40));
@@ -61,12 +60,14 @@ function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX
     imageOpp.style.visibility = 'visible';
     //color end point
     context.fillStyle = "#3045BF";
-    endx2 = (800 + (40 * endX2));
+    endX2 = (800 + (40 * endX2));
     endy2 = (100 + (40 * endY2));
-    context.fillRect(endx2, endy2, 40, 40);
+    context.fillRect(endX2, endy2, 40, 40);
 }
 
-
+/*
+Checks wheather the player is able to move in the direction he desires
+ */
 function canMoveTo(destX, destY) {
     var canMove ; // 1 means: player can move
     // check whether the player would move inside the bounds of the canvas
@@ -175,37 +176,35 @@ function SetSolveArray(stringMaze) {
     }
 }
 
-
+/*
+This method Will MOve the Opponents Icon
+ */
 function opMove(stringMove) {
-    switch(stringMove)
-    {
-        case("up"):
-        {
-            console.log("In up");
+    var str = stringMove.substring(0, stringMove.length -2);
+    switch(str) {
+        case "up":
             imageOpp.style.visibility = "hidden";
             imageOpp.style.top = parseInt(imageOpp.style.top) - 40 + 'px';
             imageOpp.style.visibility = 'visible';
-        }
-        case("left"):
-        {
-            console.log("In left");
+            break;
+
+        case "left":
             imageOpp.style.visibility = "hidden";
             imageOpp.style.left = parseInt(imageOpp.style.left) - 40 + 'px';
             imageOpp.style.visibility = 'visible';
-        }
-        case("right"):
-        {
+            break;
+
+        case"right":
             imageOpp.style.visibility = "hidden";
             imageOpp.style.left = parseInt(imageOpp.style.left) + 40 + 'px';
             imageOpp.style.visibility = 'visible';
+            break;
 
-        }
-        case("down"):
-        {
+        case"down":
             imageOpp.style.visibility = "hidden";
             imageOpp.style.top = parseInt(imageOpp.style.top) + 40 + 'px';
             imageOpp.style.visibility = 'visible';
-        }
+            break;
     }
 }
 
@@ -225,7 +224,7 @@ function Solve() {
     var blue = parseInt(color.data[2]);
     if(2 == arrSolved[i][j] && 1 == movingAllowed && blue == 255)
     {
-        distance = Math.sqrt( (currI - 40 - x2)*(x1-x2) + (y1-y2)*(y1-y2) );
+        distance = Math.sqrt((currI - 40 - x2) * (x1 - x2) + (y1 - y2)*(y1 - y2));
         if(distance < minDistance)
         {
             minDistance = distance;
@@ -235,18 +234,17 @@ function Solve() {
     }
 }
 
+/*
+This will send the ajax object with the players move to the server
+ */
 function sendMove(moveToSend){
     var send = {"move" : moveToSend};
     $.ajax({
         type: 'GET',
-        url: 'SendMoveServlet',
+        url: 'controllers.SendMoveServlet',
         data: send
     });
 }
 
 document.getElementById("myImg").style.visibility = "hidden";
 window.addEventListener("keydown", move);
-
-
-
-

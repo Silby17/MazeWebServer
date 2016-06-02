@@ -26,7 +26,7 @@ $(function(){
 });
 
 function getMaze(){
-    $.getJSON("SingleMazeServlet", function(data){
+    $.getJSON("controllers.SingleMazeServlet", function(data){
         if (data.singleMaze != current){
             mazeFromServer = data.singleMaze;
         }
@@ -34,7 +34,7 @@ function getMaze(){
     })
 }
 function getSolution() {
-    $.getJSON("SingleSolutionServlet", {name : mazeName}, function(data){
+    $.getJSON("controllers.SingleSolutionServlet", {name : mazeName}, function(data){
         if(data.singleSol != solution){
             solution = data.singleSol;
         }

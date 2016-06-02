@@ -8,7 +8,7 @@
 <div class="loader" style="display: none"></div>
 <form>
 <ul style="float:right">
-    <li><button formaction="/LogoutServlet" type="submit"
+    <li><button formaction="/controllers.LogoutServlet" type="submit"
                 formmethod="post">Logout</button></li>
     <li> <% String icon = "images/Icons/";
         String iconName = (String)session.getAttribute("icon");
@@ -24,7 +24,7 @@
 </form>
 
 <div class="btn-group" style="float: left" >
-    <form action="MultiplayerServlet" method="post">
+    <form action="controllers.MultiplayerServlet" method="post">
         <button id="getSuggestionBtn" type="button"
                 name="action">Get Suggestion</button>
         <button id="returnBtn" type="button" name="action"

@@ -7,10 +7,10 @@
 <body background="/images/bg.jpg">
 <div class="loader" style="display: none"></div>
 
-<form action="/LogoutServlet">
+<form action="/controllers.LogoutServlet">
     <ul style="float:right">
         <li><button type="submit" formmethod="post"
-                    formaction="/LogoutServlet">Logout</button></li>
+                    formaction="/controllers.LogoutServlet">Logout</button></li>
         <li> <% String icon = "images/Icons/";
             String iconName = (String)session.getAttribute("icon");
             icon += iconName;
@@ -28,7 +28,7 @@
 
 
 <div class="btn-group" style="float: left" >
-    <form action="SinglePlayerButtonHandlerServlet" method="post">
+    <form action="controllers.SinglePlayerButtonHandlerServlet" method="post">
         <button id="getMazeBtn" type="button" name="action"
                 value="StartNewGame">Start New Game</button>
         <button id="getSolution" type="button" name="action"

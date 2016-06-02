@@ -241,7 +241,7 @@ function sendMove(moveToSend){
     var send = {"move" : moveToSend};
     $.ajax({
         type: 'GET',
-        url: 'SendMoveServlet',
+        url: 'controllers.SendMoveServlet',
         data: send
     });
 }

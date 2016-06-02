@@ -10,11 +10,11 @@
     <link rel="stylesheet" href="css/mainMenu.css">
 </head>
 <body>
-<form action="/LogoutServlet">
+<form action="controllers.LogoutServlet">
 <ul div style="float: right" class="ul userInfo">
     <li >
         </div>
-        <button type="submit" formaction="/LogoutServlet" formmethod="post">Logout</button>
+        <button type="submit" formaction="/controllers.LogoutServlet" formmethod="post">Logout</button>
         </div>
     </li>
     <li>

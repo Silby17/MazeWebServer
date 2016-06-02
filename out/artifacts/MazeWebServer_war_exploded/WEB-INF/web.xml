@@ -3,17 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+    <display-name>Maze Web App</display-name>
 
     <listener>
-        <listener-class>ServletContextManager</listener-class>
+        <listener-class>controllers.ServletContextManager</listener-class>
     </listener>
 
     <welcome-file-list>
-        <welcome-file>LoginServlet</welcome-file>
+        <welcome-file>controllers.LoginServlet</welcome-file>
     </welcome-file-list>
     <servlet>
         <servlet-name>MainMenuServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <servlet-class>controllers.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>MainMenuServlet</servlet-name>
