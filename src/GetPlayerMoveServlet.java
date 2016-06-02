@@ -1,5 +1,4 @@
 import org.json.simple.JSONObject;
-
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
