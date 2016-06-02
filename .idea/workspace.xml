@@ -8,82 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d76691a-4dda-4a9c-8dca-989e1e12b51a" name="Default" comment="Hid Button and gave them Functionability">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/AsyncRunnable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/CloseGameServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/DBManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/GetMultiMazeServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/GetPlayerMoveServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/LoginServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/LogoutServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/MultiplayerMazeServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/MultiplayerMazeServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/MultiplayerServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/NewUserFormServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/RequestGameServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/SendMoveServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/ServerConnectionManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/ServletContextManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/SingleMazeServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/SinglePlayerButtonHandlerServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/SingleSolutionServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/config.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/AsyncRunnable.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/CloseGameServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/DBManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/GetMultiMazeServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/GetPlayerMoveServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/LoginServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/LogoutServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/MultiplayerMazeServlet$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/MultiplayerMazeServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/MultiplayerServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/NewUserFormServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/RequestGameServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/SendMoveServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/ServerConnectionManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/ServletContextManager.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/SingleMazeServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/SinglePlayerButtonHandlerServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/SingleSolutionServlet.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/User.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/config.txt" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/CloseGameServlet.java" afterPath="$PROJECT_DIR$/src/controllers/CloseGameServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DBManager.java" afterPath="$PROJECT_DIR$/src/beans/DBManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GetMultiMazeServlet.java" afterPath="$PROJECT_DIR$/src/controllers/GetMultiMazeServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/GetPlayerMoveServlet.java" afterPath="$PROJECT_DIR$/src/controllers/GetPlayerMoveServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/LoginServlet.java" afterPath="$PROJECT_DIR$/src/controllers/LoginServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/LogoutServlet.java" afterPath="$PROJECT_DIR$/src/controllers/LogoutServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/MultiplayerServlet.java" afterPath="$PROJECT_DIR$/src/controllers/MultiplayerServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/NewUserFormServlet.java" afterPath="$PROJECT_DIR$/src/controllers/NewUserFormServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/RequestGameServlet.java" afterPath="$PROJECT_DIR$/src/controllers/RequestGameServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SendMoveServlet.java" afterPath="$PROJECT_DIR$/src/controllers/SendMoveServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ServerConnectionManager.java" afterPath="$PROJECT_DIR$/src/beans/ServerConnectionManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ServletContextManager.java" afterPath="$PROJECT_DIR$/src/controllers/ServletContextManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SingleMazeServlet.java" afterPath="$PROJECT_DIR$/src/controllers/SingleMazeServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SinglePlayerButtonHandlerServlet.java" afterPath="$PROJECT_DIR$/src/controllers/SinglePlayerButtonHandlerServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/SingleSolutionServlet.java" afterPath="$PROJECT_DIR$/src/controllers/SingleSolutionServlet.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/User.java" afterPath="$PROJECT_DIR$/src/beans/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/config.txt" afterPath="$PROJECT_DIR$/src/beans/config.txt" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/images/SeaGreenBtn.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/images/bg2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/images/blue-button2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/images/btnBlack.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/images/close-hover.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/images/close.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/images/greenBUtton.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war/MazeWebServer_war.war" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war/MazeWebServer_war.war" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/java_json.xml" afterPath="$PROJECT_DIR$/.idea/libraries/java_json.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MainMenu.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MainMenu.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MultiAction.js" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MultiAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/Multiplayer.js" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/Multiplayer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/Multiplayer.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/Multiplayer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/SinglePlayer.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/SinglePlayer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/login.jsp" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/login.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/EnterGameName.jsp" afterPath="$PROJECT_DIR$/web/EnterGameName.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/MainMenu.jsp" afterPath="$PROJECT_DIR$/web/MainMenu.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/MultiAction.js" afterPath="$PROJECT_DIR$/web/MultiAction.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Multiplayer.js" afterPath="$PROJECT_DIR$/web/Multiplayer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/Multiplayer.jsp" afterPath="$PROJECT_DIR$/web/Multiplayer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/SignUpForm.html" afterPath="$PROJECT_DIR$/web/SignUpForm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/SinglePlayer.js" afterPath="$PROJECT_DIR$/web/SinglePlayer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/SinglePlayer.jsp" afterPath="$PROJECT_DIR$/web/SinglePlayer.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.jsp" afterPath="$PROJECT_DIR$/web/login.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MazeWebServer.iml" afterPath="$PROJECT_DIR$/MazeWebServer.iml" />
     </list>
     <ignored path="MazeWebServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -260,61 +196,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MazeWebServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MazeWebServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MazeWebServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MazeWebServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MazeWebServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MazeWebServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="beans" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -327,7 +209,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
@@ -1022,7 +904,7 @@
       <workItem from="1464719944944" duration="6516000" />
       <workItem from="1464786916569" duration="3584000" />
       <workItem from="1464851365724" duration="26643000" />
-      <workItem from="1464884805658" duration="10229000" />
+      <workItem from="1464884805658" duration="10666000" />
     </task>
     <task id="LOCAL-00078" summary="Pulled start and end points and sent to Draw function">
       <created>1464519941244</created>
@@ -1371,7 +1253,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238818000" />
+    <option name="totallyTimeSpent" value="239255000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1469,11 +1351,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/images/bg_form.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/images/bg.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1515,13 +1392,6 @@
         <state relative-caret-position="111">
           <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/mainMenu.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="48" column="16" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1826,6 +1696,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/images/bg2.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/mainMenu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -1892,7 +1775,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>gson-2.2.2</last-edited>
+          <last-edited>json-simple-1.1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
