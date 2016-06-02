@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,7 +10,7 @@ import java.io.IOException;
 /*****************************************************************************
  * This class will handle the closing of the Multiplayer game with the Server
  *****************************************************************************/
-@WebServlet(name = "CloseGameServlet")
+@WebServlet(name = "CloseGameServlet", urlPatterns = {"/CloseGameServlet"})
 public class CloseGameServlet extends HttpServlet {
 
     /*************************************************************************
@@ -21,6 +23,7 @@ public class CloseGameServlet extends HttpServlet {
      *************************************************************************/
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println("In close Game Servlet");
         User user = (User)request.getSession().getAttribute("user");
         String fromClient = request.getParameter("gameName");
         String closeCommand = 5 + " " + fromClient;
