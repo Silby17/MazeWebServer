@@ -5,11 +5,11 @@ var mazeHeight = 500;
 var imageObj = document.getElementById("myImg");
 var imageOpp = document.getElementById("oppImg");
 imageObj.style.position= 'relative';
-imageObj.style.left = '200px';
-imageObj.style.top = '100px';
+imageOpp.style.position= 'relative';
 var borderx = 200;
 var bordery = 100;
 var endx,endy, endx2,endy2;
+
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX2, endY2) {
     window.addEventListener("keydown", move);
@@ -39,7 +39,7 @@ function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX
         y = y + 40;
         x = borderx;
     }
-    
+
     //place start image 4 the main player
     var x = (240 + (startX * 40));
     var y = (100 + (startY * 40));
@@ -53,7 +53,7 @@ function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX
     context.fillRect(endx, endy, 40, 40);
 
     //place start image 4 the opp player
-    var x = (800 + (startX2 * 40));
+    var x = (880 + (startX2 * 40));
     var y = (100 + (startY2 * 40));
     imageOpp.style.left = parseInt(x)  + 'px';
     imageOpp.style.top = parseInt(y) + 'px';
@@ -63,8 +63,8 @@ function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX
     endx2 = (800 + (40 * endX2));
     endy2 = (100 + (40 * endY2));
     context.fillRect(endx2, endy2, 40, 40);
-
 }
+
 
 function canMoveTo(destX, destY) {
     var canMove ; // 1 means: player can move
@@ -77,6 +77,7 @@ function canMoveTo(destX, destY) {
     }
     return canMove;
 }
+
 
 //show win alert
 function win() {
@@ -121,6 +122,7 @@ function move(e) {
             if(movingAllowed == 1 && blue == 191) {
                 win();
             }
+            sendMove("left");
             break;
         // arrow down key
         case 40:
@@ -136,6 +138,7 @@ function move(e) {
             if(movingAllowed == 1 && blue == 191) {
                 win();
             }
+            sendMove("down");
             break;
         // arrow right key
         case 39:
@@ -151,9 +154,11 @@ function move(e) {
             if(movingAllowed == 1 && blue == 191) {
                 win();
             }
+            sendMove("right");
             break;
     }
 }
+
 
 //The function builds a 2d array and placing the string in it.
 function SetSolveArray(stringMaze) {
@@ -183,11 +188,11 @@ function Solve() {
     //not enough also check that the 2 is the closet to win point
     //left
     movingAllowed = canMoveTo(currI - 40,  currJ);
-    var color = context.getImageData(parseInt(imageObj.style.left) - 80, parseInt(imageObj.style.top), 40, 40);
+    var color = context.getImageData(currI - 80, currJ, 40, 40);
     var blue = parseInt(color.data[2]);
     if(2 == arrSolved[i][j] && 1 == movingAllowed && blue == 255)
     {
-        distance = MinDistance();
+        distance = Math.sqrt( (currI - 40 - x2)*(x1-x2) + (y1-y2)*(y1-y2) );
         if(distance < minDistance)
         {
             minDistance = distance;
@@ -195,13 +200,8 @@ function Solve() {
         context.fillStyle = "#FC2828";
         context.fillRect(currI - 40,  currJ, 40, 40);
     }
-    //up
-    //down
-    //right
 }
 document.getElementById("myImg").style.visibility = "hidden";
-//DrawMaze("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011",0,3,5,5);
-//SetSolveArray("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011");
 window.addEventListener("keydown", move);
 //Solve();
 
