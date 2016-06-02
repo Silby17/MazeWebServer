@@ -989,7 +989,7 @@
       <workItem from="1464703603912" duration="11052000" />
       <workItem from="1464719944944" duration="6516000" />
       <workItem from="1464786916569" duration="3584000" />
-      <workItem from="1464851365724" duration="12108000" />
+      <workItem from="1464851365724" duration="12143000" />
     </task>
     <task id="LOCAL-00066" summary="Updated user info pane">
       <created>1464274030449</created>
@@ -1338,7 +1338,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214054000" />
+    <option name="totallyTimeSpent" value="214089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
