@@ -10,10 +10,11 @@
     <link rel="stylesheet" href="css/mainMenu.css">
 </head>
 <body>
+<form action="/LogoutServlet">
 <ul div style="float: right" class="ul userInfo">
     <li >
         </div>
-        <button>Back</button>
+        <button type="submit" formaction="/LogoutServlet" formmethod="post">Logout</button>
         </div>
     </li>
     <li>
@@ -24,13 +25,13 @@
             <img src="<%=icon%>"/>
         </div><%}%>
     <li>
-
     <% String username = (String) session.getAttribute("username");
         {%>
     <label><%=username%></label>
     <%}%>
     </li>
 </ul>
+</form>
 
 <div class="form-bg">
     <form action="/controllers.MenuServlet" method="post">
