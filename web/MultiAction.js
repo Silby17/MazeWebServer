@@ -10,6 +10,7 @@ var borderx = 200;
 var bordery = 100;
 var endx,endy, endx2,endy2;
 
+
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX2, endY2) {
     window.addEventListener("keydown", move);
@@ -173,9 +174,41 @@ function SetSolveArray(stringMaze) {
         }
     }
 }
-function MinDistance() {
 
+
+function opMove(stringMove) {
+    switch(stringMove)
+    {
+        case("up"):
+        {
+            console.log("In up");
+            imageOpp.style.visibility = "hidden";
+            imageOpp.style.top = parseInt(imageOpp.style.top) - 40 + 'px';
+            imageOpp.style.visibility = 'visible';
+        }
+        case("left"):
+        {
+            console.log("In left");
+            imageOpp.style.visibility = "hidden";
+            imageOpp.style.left = parseInt(imageOpp.style.left) - 40 + 'px';
+            imageOpp.style.visibility = 'visible';
+        }
+        case("right"):
+        {
+            imageOpp.style.visibility = "hidden";
+            imageOpp.style.left = parseInt(imageOpp.style.left) + 40 + 'px';
+            imageOpp.style.visibility = 'visible';
+
+        }
+        case("down"):
+        {
+            imageOpp.style.visibility = "hidden";
+            imageOpp.style.top = parseInt(imageOpp.style.top) + 40 + 'px';
+            imageOpp.style.visibility = 'visible';
+        }
+    }
 }
+
 
 //The function shows the best suggestion on screen according to current position.
 function Solve() {
@@ -201,10 +234,6 @@ function Solve() {
         context.fillRect(currI - 40,  currJ, 40, 40);
     }
 }
-document.getElementById("myImg").style.visibility = "hidden";
-window.addEventListener("keydown", move);
-//Solve();
-
 
 function sendMove(moveToSend){
     var send = {"move" : moveToSend};
@@ -214,3 +243,10 @@ function sendMove(moveToSend){
         data: send
     });
 }
+
+document.getElementById("myImg").style.visibility = "hidden";
+window.addEventListener("keydown", move);
+
+
+
+

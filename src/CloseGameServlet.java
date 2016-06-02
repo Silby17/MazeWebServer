@@ -26,8 +26,15 @@ public class CloseGameServlet extends HttpServlet {
         System.out.println("In close Game Servlet");
         User user = (User)request.getSession().getAttribute("user");
         String fromClient = request.getParameter("gameName");
+        System.out.println("string from Client");
         String closeCommand = 5 + " " + fromClient;
         user.getConnectionManager().sendRequest(closeCommand);
+        try{
+            Thread.sleep(3000);
+        }
+        catch (InterruptedException e){
+            e.printStackTrace();
+        }
         response.sendRedirect("controllers.MenuServlet");
     }
 

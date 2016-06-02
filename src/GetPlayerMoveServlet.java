@@ -43,7 +43,10 @@ public class GetPlayerMoveServlet extends HttpServlet {
             throws ServletException, IOException {}
 }
 
-
+/*****************************************************************************
+ * Runnable Class that will have a thread that runs the Asynchronous
+ * communication in order to get the players Moves
+ ****************************************************************************/
 class AsyncRunnable implements Runnable{
     private final AsyncContext asyncContext;
 
@@ -59,12 +62,10 @@ class AsyncRunnable implements Runnable{
 
         try{
             String fromServer = user.getConnectionManager().getMsgFromServer();
-            System.out.println();
             fromServer = fromServer.replaceAll("(\\n|\\r)", "");
 
             int indexOfEnd = fromServer.indexOf('}');
             fromServer = fromServer.substring(0, indexOfEnd + 1);
-
             JSONObject obj = new JSONObject();
             obj.put("playerMove", fromServer);
             out = res.getWriter();

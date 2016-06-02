@@ -5,13 +5,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
+/*****************************************************************************
+ * This will call the Multiplayer jsp file
+ ****************************************************************************/
 @WebServlet(name = "MultiplayerServlet", urlPatterns = {"/MultiplayerServlet"})
 public class MultiplayerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-    }
+            throws ServletException, IOException {}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

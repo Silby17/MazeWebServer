@@ -1,13 +1,14 @@
 var canvas = document.getElementById('myCanvas');
 var context = canvas.getContext('2d');
-var mazeWidth = 830;
+var mazeWidth = 870;
 var mazeHeight = 500;
 var arrSolved = new Array(10);
 var imageObj = document.getElementById("myImg");
-//imageObj.style.position= 'relative';
-//imageObj.style.left = '470px';
-//imageObj.style.top = '100px';
+imageObj.style.position= 'relative';
+imageObj.style.left = '470px';
+imageObj.style.top = '100px';
 var currI, currJ;
+var pointSolve = [];
 
 //gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY) {
@@ -33,7 +34,7 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
   y = y + 40;
   x = 430;
  }
- 
+
  //place start image
  var x = (470 + (startX * 40));
  var y = (100 + (startY * 40));
@@ -147,28 +148,107 @@ function SetSolveArray(stringMaze) {
    index++;
   }
  }
+ Solve();
 }
 
 //The function shows the best suggestion on screen according to current position.
 function Solve() {
- var movingAllowed;
+ var movingAllowed, color, blue;
  currI = parseInt(imageObj.style.left);
  currJ = parseInt(imageObj.style.top);
  var i = (((currI - 430)/40) - 1) ;
  var j = (((currJ - 100)/40) - 1) ;
- //not enough also check that the 2 is the colset to win point
+ //not enough also check that the 2 is the closet to win point
  //left
-movingAllowed = canMoveTo(currI - 40,  currJ);
- if(2 == arrSolved[i][j]  && 1 == movingAllowed)
+ movingAllowed = canMoveTo(currI - 40,  currJ);
+ color = context.getImageData(currI  - 80, currJ, 40, 40);
+ blue = parseInt(color.data[2]);
+ //add min dis and color at the end
+ if(2 == arrSolved[i][j]  && 1 == movingAllowed && 255 == blue)
  {
-    context.fillStyle = "#FC2828";
-    context.fillRect(currI - 40,  currJ, 40, 40);
+  context.fillStyle = "#FC2828";
+  context.fillRect(currI - 40,  currJ, 40, 40);
  }
  //up
  //down
  //right
 }
+
+function getPointSolve(stringMaze) {
+ var i,j;
+ arrSolved = new Array(10);
+ for (i = 0; i < 10; i++)
+  arrSolved[i] = new Array(10);
+
+ for (i = 0; i < 100; i++) {
+  arrSolved[parseInt(i / 10)][i % 10] = stringMaze.charCodeAt(i) - 48;
+ }
+
+ for (i = 0; i < 10; i++) {
+  for (j = 0; j < 10; j++) {
+   if (arrSolved[i][j] === 2) {
+    var idPoint = i + "," + j;
+    pointSolve.push(idPoint);
+   }
+  }
+ }
+}
+
+function getClue(stringMaze) {
+ getPointSolve(stringMaze);
+ currI = parseInt(imageObj.style.left);
+ currJ = parseInt(imageObj.style.top);
+ var i = (((currI - 430)/40) - 1) ;
+ var j = (((currJ - 100)/40) - 1) ;
+ alert(currI +i );
+ alert(currJ +j );
+ /*
+  var idMe = me.Row + "," + me.Col;
+  var lastMove = movesQueue.pop();
+  movesQueue.push(lastMove);
+
+
+
+  if (pointSolve.indexOf(idMe) !== -1) {
+  alert("here");
+
+  var upPoint = (me.Row - 1) + "," + me.Col;
+  var downPoint = (me.Row + 1) + "," + me.Col;
+  var rightPoint = me.Row + "," + (me.Col + 1);
+  var leftPoint = me.Row + "," + (me.Col - 1);
+  var cluePoint;
+
+  //up
+  if ((pointSolve.indexOf(upPoint) !== -1) &&
+  lastMove !== upPoint) {
+  cluePoint = upPoint;
+  }
+
+  //down
+  if ((pointSolve.indexOf(downPoint) !== -1) &&
+  lastMove !== downPoint) {
+  cluePoint = downPoint;
+  }
+
+  //right
+  if ((pointSolve.indexOf(rightPoint) !== -1) &&
+  lastMove !== rightPoint) {
+  cluePoint = rightPoint;
+  }
+
+  //left
+  if ((pointSolve.indexOf(leftPoint) !== -1) &&
+  lastMove !== leftPoint) {
+  cluePoint = leftPoint;
+  }
+  } else {
+  alert("else");
+  cluePoint = lastMove;
+  }
+
+  document.getElementById(cluePoint).style.backgroundColor = "pink";
+  */
+}
 document.getElementById("myImg").style.visibility = "hidden";
 window.addEventListener("keydown", move);
-SetSolveArray("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011");
-Solve();
+//SetSolveArray("0000000000000010101010111010001000101011101010101010101110101001110011110011110011110011110011110011");
