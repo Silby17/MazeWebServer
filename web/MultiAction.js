@@ -101,12 +101,12 @@ function move(e) {
                 document.getElementById("myImg").style.visibility = "hidden";
                 imageObj.style.top = parseInt(imageObj.style.top) - 40 + 'px';
                 imageObj.style.visibility = 'visible';
+                sendMove("up");
             }
             //check win
             if(movingAllowed == 1 && blue == 191) {
                 win();
             }
-            sendMove("up");
             break;
         // arrow left key
         case 37:
@@ -117,12 +117,12 @@ function move(e) {
                 document.getElementById("myImg").style.visibility = "hidden";
                 imageObj.style.left = parseInt(imageObj.style.left) - 40 + 'px';
                 imageObj.style.visibility = 'visible';
+                sendMove("left");
             }
             //check win
             if(movingAllowed == 1 && blue == 191) {
                 win();
             }
-            sendMove("left");
             break;
         // arrow down key
         case 40:
@@ -133,12 +133,12 @@ function move(e) {
                 document.getElementById("myImg").style.visibility = "hidden";
                 imageObj.style.top = parseInt(imageObj.style.top) + 40 + 'px';
                 imageObj.style.visibility = 'visible';
+                sendMove("down");
             }
             //check win
             if(movingAllowed == 1 && blue == 191) {
                 win();
             }
-            sendMove("down");
             break;
         // arrow right key
         case 39:
@@ -149,12 +149,12 @@ function move(e) {
                 document.getElementById("myImg").style.visibility = "hidden";
                 imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
                 imageObj.style.visibility = 'visible';
+                sendMove("right");
             }
             //check win
             if(movingAllowed == 1 && blue == 191) {
                 win();
             }
-            sendMove("right");
             break;
     }
 }
