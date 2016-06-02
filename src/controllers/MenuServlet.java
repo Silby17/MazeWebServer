@@ -1,5 +1,4 @@
 package controllers;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +23,7 @@ public class MenuServlet extends HttpServlet {
             throws ServletException, IOException {
         String buttonClicked = request.getParameter("action");
         if(buttonClicked.equals("single")){
-            response.sendRedirect("/SinglePlayerServlet");
+            response.sendRedirect("/SinglePlayer.jsp");
         }
         else if(buttonClicked.equals("multiplayer"))
             response.sendRedirect("/EnterGameName.jsp");
