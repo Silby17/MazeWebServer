@@ -39,6 +39,7 @@ function DrawMaze(stringMaze, startX, startY, endX, endY, startX2, startY2, endX
         y = y + 40;
         x = borderx;
     }
+    
     //place start image 4 the main player
     var x = (240 + (startX * 40));
     var y = (100 + (startY * 40));

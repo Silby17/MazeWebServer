@@ -45,7 +45,6 @@
             style="float:left" style="visibility: hidden" align="center"/> <%
     }
 %>
-
 <script src="./jquery-2.2.4.js"></script>
 <script src = "MultiAction.js"></script>
 <script src="Multiplayer.js"></script>
