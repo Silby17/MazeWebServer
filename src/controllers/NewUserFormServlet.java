@@ -1,8 +1,6 @@
 package controllers;
-
 import beans.DBManager;
 import beans.User;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -65,8 +63,16 @@ public class NewUserFormServlet extends HttpServlet {
             Object att = context.getAttribute("database");
             DBManager manager = (DBManager)att;
             manager.addUser(newUser);
+            User currentUser = manager.getUser(usrName);
+            currentUser.getConnectionManager().connect();
+            //Create a new session for the User that just signed up
             HttpSession session = request.getSession();
-            response.sendRedirect("/controllers.LoginServlet");
+            session.setAttribute("user", currentUser);
+            session.setAttribute("username", usrName);
+            session.setAttribute("icon", currentUser.getIcon());
+
+            //Open the main menu for the new signed up user
+            response.sendRedirect("controllers.MenuServlet");
         }
     }
 
