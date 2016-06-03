@@ -24,9 +24,6 @@ public class ServletContextManager implements ServletContextListener {
         ServletContext context = servletContextEvent.getServletContext();
         this.dbManager = new DBManager();
 
-        //This method call will load all backed up users to the Database
-        dbManager.loadBackup();
-
         /**TO REMOVE BELOW**/
         User temp = new User("admin", "admin", "Yossi", "yo@s.com", "redNose.png");
         dbManager.addUser(temp);

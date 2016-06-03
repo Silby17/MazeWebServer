@@ -17,6 +17,8 @@ public class DBManager {
      *****************************************************************/
     public DBManager(){
         this.userMap = new HashMap<>();
+        //Load any backed-up Data
+        loadBackup();
     }
 
 
@@ -69,7 +71,7 @@ public class DBManager {
      *********************************************************************/
     public void serializeUsers(){
         try{
-            FileOutputStream fos = new FileOutputStream("users.ser");
+            FileOutputStream fos = new FileOutputStream("userBackup.ser");
             ObjectOutputStream oos = new ObjectOutputStream(fos);
             oos.writeObject(userMap);
             oos.close();
@@ -85,7 +87,7 @@ public class DBManager {
      *********************************************************************/
     public void deserializeUsers(){
         try{
-            FileInputStream fis = new FileInputStream("users.ser");
+            FileInputStream fis = new FileInputStream("userBackup.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
             userMap = (HashMap)ois.readObject();
             ois.close();
@@ -103,7 +105,7 @@ public class DBManager {
      * If it does, it will load its contents into the database
      *********************************************************************/
     public void loadBackup(){
-        File file = new File("users.ser");
+        File file = new File("userBackup.ser");
         if(file.exists()){
             deserializeUsers();
         }
