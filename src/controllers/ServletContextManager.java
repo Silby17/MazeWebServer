@@ -1,11 +1,10 @@
 package controllers;
-
-import beans.DBManager;
-import beans.User;
-
 import javax.servlet.ServletContext;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
+import beans.DBManager;
+import beans.User;
+
 
 /******************************************************************************
  * This Class will initialize the Contexts and add attributes that will be
@@ -14,6 +13,7 @@ import javax.servlet.ServletContextListener;
 public class ServletContextManager implements ServletContextListener {
     private DBManager dbManager;
 
+
     /*************************************************************************
      * Initialization method that will initialize the Server Connection
      * as well as the DataBase manager
@@ -21,21 +21,20 @@ public class ServletContextManager implements ServletContextListener {
      ************************************************************************/
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.println("Context Created");
         ServletContext context = servletContextEvent.getServletContext();
-
         this.dbManager = new DBManager();
+
+        //This method call will load all backed up users to the Database
+        dbManager.loadBackup();
 
         /**TO REMOVE BELOW**/
         User temp = new User("admin", "admin", "Yossi", "yo@s.com", "redNose.png");
         dbManager.addUser(temp);
-        User temp2 = new User("admin2", "admin2", "Joes", "s@c.com", "panda.png");
+        User temp2 = new User("admin2", "admin2", "Joe", "s@c.com", "panda.png");
         dbManager.addUser(temp2);
-        System.out.println("Created new USer");
 
         context.setAttribute("database", dbManager);
-        //context.setAttribute("connection", serverManager);
-        System.out.println("Context initialized");
+        System.out.println("Context initialized Successfully");
     }
 
 
@@ -48,5 +47,4 @@ public class ServletContextManager implements ServletContextListener {
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
         System.out.println("Context destroyed");
     }
-
 }
