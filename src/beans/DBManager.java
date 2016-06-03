@@ -1,7 +1,4 @@
 package beans;
-
-import beans.User;
-
 import java.io.*;
 import java.util.HashMap;
 
@@ -20,7 +17,6 @@ public class DBManager {
      *****************************************************************/
     public DBManager(){
         this.userMap = new HashMap<>();
-        //deserializeUsers();
     }
 
 
@@ -30,7 +26,8 @@ public class DBManager {
      ******************************************************************/
     public void addUser(User user){
         this.userMap.put(user.getUserName(), user);
-        //serializeUsers();
+        //This will backup all the users after addition of a new user
+        serializeUsers();
     }
 
 
@@ -56,6 +53,12 @@ public class DBManager {
         }
     }
 
+
+    /**********************************************************************
+     * This will return the User
+     * @param username - the username of the user
+     * @return - The USER requested
+     **********************************************************************/
     public User getUser(String username){
         return userMap.get(username);
     }
@@ -76,11 +79,11 @@ public class DBManager {
         }
     }
 
+
     /**********************************************************************
      * This method will deserialize the HashMap of all the Users
      *********************************************************************/
     public void deserializeUsers(){
-
         try{
             FileInputStream fis = new FileInputStream("users.ser");
             ObjectInputStream ois = new ObjectInputStream(fis);
@@ -91,6 +94,18 @@ public class DBManager {
             e.printStackTrace();
         }catch (ClassNotFoundException c){
             c.printStackTrace();
+        }
+    }
+
+
+    /**********************************************************************
+     * This method will first check if the Users backup file exists
+     * If it does, it will load its contents into the database
+     *********************************************************************/
+    public void loadBackup(){
+        File file = new File("users.ser");
+        if(file.exists()){
+            deserializeUsers();
         }
     }
 }
