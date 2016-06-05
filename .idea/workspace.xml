@@ -9,15 +9,17 @@
   <component name="ChangeListManager">
     <list default="true" id="6d76691a-4dda-4a9c-8dca-989e1e12b51a" name="Default" comment="Hid Button and gave them Functionability">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/beans/DBManager.class" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/beans/DBManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/beans/ServerConnectionManager.class" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/beans/ServerConnectionManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/controllers/NewUserFormServlet.class" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/controllers/NewUserFormServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/controllers/ServletContextManager.class" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/WEB-INF/classes/controllers/ServletContextManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/beans/DBManager.class" afterPath="$PROJECT_DIR$/out/production/MazeWebServer/beans/DBManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/beans/ServerConnectionManager.class" afterPath="$PROJECT_DIR$/out/production/MazeWebServer/beans/ServerConnectionManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/controllers/NewUserFormServlet.class" afterPath="$PROJECT_DIR$/out/production/MazeWebServer/controllers/NewUserFormServlet.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/MazeWebServer/controllers/ServletContextManager.class" afterPath="$PROJECT_DIR$/out/production/MazeWebServer/controllers/ServletContextManager.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/beans/DBManager.java" afterPath="$PROJECT_DIR$/src/beans/DBManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MazeActions.js" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MazeActions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MultiAction.js" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/MultiAction.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/Multiplayer.js" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/Multiplayer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/SinglePlayer.js" afterPath="$PROJECT_DIR$/out/artifacts/MazeWebServer_war_exploded/SinglePlayer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/MazeActions.js" afterPath="$PROJECT_DIR$/web/MazeActions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/MultiAction.js" afterPath="$PROJECT_DIR$/web/MultiAction.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/SinglePlayer.js" afterPath="$PROJECT_DIR$/web/SinglePlayer.js" />
     </list>
     <ignored path="MazeWebServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,7 +44,7 @@
     <favorites_list name="MazeWebServer" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="NewUserFormServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/NewUserFormServlet.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -53,14 +55,54 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DBManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/beans/DBManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
+            <state relative-caret-position="462">
               <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SinglePlayer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/SinglePlayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-137">
+              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MazeActions.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/MazeActions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="288">
+              <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MultiAction.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/MultiAction.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4248">
+              <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SendMoveServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/SendMoveServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="48">
+              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -116,7 +158,6 @@
         <option value="$PROJECT_DIR$/src/GetMultiPlayerMazeServlet.java" />
         <option value="$PROJECT_DIR$/src/controllers/MenuServlet.java" />
         <option value="$PROJECT_DIR$/src/LogoutServlet.java" />
-        <option value="$PROJECT_DIR$/web/MazeActions.js" />
         <option value="$PROJECT_DIR$/src/RequestGameServlet.java" />
         <option value="$PROJECT_DIR$/src/CloseGameServlet.java" />
         <option value="$PROJECT_DIR$/src/MultiplayerMazeServlet.java" />
@@ -130,15 +171,16 @@
         <option value="$PROJECT_DIR$/web/EnterGameName.jsp" />
         <option value="$PROJECT_DIR$/web/MainMenu.jsp" />
         <option value="$PROJECT_DIR$/web/SinglePlayer.jsp" />
-        <option value="$PROJECT_DIR$/web/SinglePlayer.js" />
-        <option value="$PROJECT_DIR$/web/MultiAction.js" />
-        <option value="$PROJECT_DIR$/web/Multiplayer.js" />
         <option value="$PROJECT_DIR$/web/Multiplayer.jsp" />
         <option value="$PROJECT_DIR$/web/SignUpForm.html" />
         <option value="$PROJECT_DIR$/src/controllers/NewUserFormServlet.java" />
         <option value="$PROJECT_DIR$/src/beans/ServerConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/controllers/ServletContextManager.java" />
         <option value="$PROJECT_DIR$/src/beans/DBManager.java" />
+        <option value="$PROJECT_DIR$/web/SinglePlayer.js" />
+        <option value="$PROJECT_DIR$/web/Multiplayer.js" />
+        <option value="$PROJECT_DIR$/web/MultiAction.js" />
+        <option value="$PROJECT_DIR$/web/MazeActions.js" />
       </list>
     </option>
   </component>
@@ -188,7 +230,6 @@
     <panes>
       <pane id="Scratches" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,6 +300,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -963,7 +1005,8 @@
       <workItem from="1464851365724" duration="26643000" />
       <workItem from="1464884805658" duration="10693000" />
       <workItem from="1464940150975" duration="3762000" />
-      <workItem from="1465121104563" duration="1066000" />
+      <workItem from="1465121104563" duration="1173000" />
+      <workItem from="1465139563997" duration="1719000" />
     </task>
     <task id="LOCAL-00078" summary="Pulled start and end points and sent to Draw function">
       <created>1464519941244</created>
@@ -1312,7 +1355,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244110000" />
+    <option name="totallyTimeSpent" value="245936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1328,7 +1371,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22318527" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6370531" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1928494" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1339,7 +1382,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42578548" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42578548" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1495,7 +1538,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1503,7 +1545,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-125">
           <caret line="19" column="75" selection-start-line="19" selection-start-column="75" selection-end-line="19" selection-end-column="75" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1540,16 +1581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/SendMoveServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1578,7 +1609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1593,7 +1623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="77" column="0" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1618,24 +1647,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/MazeActions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="253" column="42" selection-start-line="253" selection-start-column="42" selection-end-line="253" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/Multiplayer.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-312">
           <caret line="26" column="30" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/SinglePlayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="36" column="27" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1669,14 +1684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/Multiplayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/ServletContextManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="24">
@@ -1695,14 +1702,6 @@
             <element signature="imports" expanded="true" />
             <element signature="e#303#304#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/MultiAction.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3104">
-          <caret line="238" column="3" selection-start-line="238" selection-start-column="3" selection-end-line="238" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1726,11 +1725,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/beans/DBManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="462">
           <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/SendMoveServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/Multiplayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1392">
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/MultiAction.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4248">
+          <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/SinglePlayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/MazeActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="45" column="3" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>

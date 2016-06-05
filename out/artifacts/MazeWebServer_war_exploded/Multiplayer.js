@@ -56,7 +56,7 @@ function getMoveFromServer(){
             if(data.playerMove != 0){
                 otherMove = data.playerMove;
                 var moveObject = JSON.parse(otherMove);
-                opMove(moveObject.Move);
+                oppMoves(moveObject.Move);
             }
             setTimeout(function() {getMoveFromServer()}, 1000);
         },

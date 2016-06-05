@@ -57,4 +57,5 @@ function stopSolCheck(){
     $('.loader').hide();
     var solutionObject = JSON.parse(solution);
     console.log(solutionObject);
+    SetSolveArray(solutionObject.Maze);
 }

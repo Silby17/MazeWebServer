@@ -179,7 +179,7 @@ function SetSolveArray(stringMaze) {
 /*
 This method Will MOve the Opponents Icon
  */
-function opMove(stringMove) {
+function oppMoves(stringMove) {
     var str = stringMove.substring(0, stringMove.length -2);
     switch(str) {
         case "up":
