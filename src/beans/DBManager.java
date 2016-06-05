@@ -110,4 +110,18 @@ public class DBManager {
             deserializeUsers();
         }
     }
+
+
+    /************************************************************************
+     * This method will delete the User database backup file if ever needed
+     ***********************************************************************/
+    public void deleteBackupFile(){
+        File backupFile = new File("userBackup.ser");
+
+        try{
+            backupFile.delete();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
