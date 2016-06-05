@@ -3,11 +3,12 @@ package beans;
 import java.io.*;
 import java.net.Socket;
 
-public class ServerConnectionManager {
+public class ServerConnectionManager implements java.io.Serializable {
     private Socket socket;
     private String IP;
     private int PORT;
     private boolean connected;
+
 
     public ServerConnectionManager(){
         readConfigInfo();
