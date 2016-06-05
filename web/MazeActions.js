@@ -7,12 +7,13 @@ var imageObj = document.getElementById("myImg");
 imageObj.style.position= 'relative';
 imageObj.style.left = '470px';
 imageObj.style.top = '100px';
-var currI, currJ, endx, endy, xRed = -1, yRed = -1;
+var currI, currJ, endX, endY, xRed = -1, yRed = -1;
+
 
 //Gets a string and makes a grid out of it.
 function DrawMaze(stringMaze, startX, startY, endX, endY) {
  window.addEventListener("keydown", move);
- //context.rect(430,100,400,400);
+ context.rect(430,100,400,400);
  context.stroke();
  var x = 430, y = 100, index =0;
 //row
@@ -41,10 +42,11 @@ function DrawMaze(stringMaze, startX, startY, endX, endY) {
  imageObj.style.visibility = 'visible';
  //color end point
  context.fillStyle = "#3045BF";
- endx = (430 + (40 * endY));
- endy = (100 + (40 * endX));
- //context.fillRect(endx, endy, 40, 40);
+ endX = (430 + (40 * endY));
+ endY = (100 + (40 * endX));
+ context.fillRect(endX, endY, 40, 40);
 }
+
 
 //Checks it the given point is in the border of the grid.
 function canMoveTo(destX, destY) {
@@ -65,6 +67,7 @@ function win() {
  window.removeEventListener("keydown", move);
 }
 
+
 //The function is in charge of the movement of the icon on the board.
 function move(e) {
  var movingAllowed;
@@ -78,7 +81,7 @@ function move(e) {
    blue = parseInt(color.data[2]);
    //if blue pixels are 255 mines it is white
    if(movingAllowed == 1 && (blue == 255 || blue == 40)) {
-    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.visibility = "hidden";
     imageObj.style.top = parseInt(imageObj.style.top) - 40 + 'px';
     imageObj.style.visibility = 'visible';
    }
@@ -93,7 +96,7 @@ function move(e) {
    color = context.getImageData(parseInt(imageObj.style.left) - 80, parseInt(imageObj.style.top), 40, 40);
    blue = parseInt(color.data[2]);
    if(movingAllowed == 1 && (blue == 255 || blue == 40)) {
-    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.visibility = "hidden";
     imageObj.style.left = parseInt(imageObj.style.left) - 40 + 'px';
     imageObj.style.visibility = 'visible';
    }
@@ -108,7 +111,7 @@ function move(e) {
    color = context.getImageData((parseInt(imageObj.style.left)- 40), (parseInt(imageObj.style.top) +40)  , 40, 40);
    blue = parseInt(color.data[2]);
    if(movingAllowed == 1 && (blue == 255 || blue ==40)) {
-    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.visibility = "hidden";
     imageObj.style.top = parseInt(imageObj.style.top) + 40 + 'px';
     imageObj.style.visibility = 'visible';
    }
@@ -123,7 +126,7 @@ function move(e) {
    color = context.getImageData(parseInt(imageObj.style.left), parseInt(imageObj.style.top), 40, 40);
    blue = parseInt(color.data[2]);
    if(movingAllowed == 1 && (blue == 255 || blue == 40)) {
-    document.getElementById("myImg").style.visibility = "hidden";
+    imageObj.style.visibility = "hidden";
     imageObj.style.left = parseInt(imageObj.style.left) + 40 + 'px';
     imageObj.style.visibility = 'visible';
    }
@@ -133,11 +136,13 @@ function move(e) {
    }
    break;
  }
- if( -1 != xRed && -1 != yRed)
- //color the suggestion white
+ if( -1 != xRed && -1 != yRed) {
+  //color the suggestion white
   context.fillStyle = "#FFFFFF";
- context.fillRect(xRed, yRed, 40, 40);
+  context.fillRect(xRed, yRed, 40, 40);
+ }
 }
+
 
 //The function builds a 2d array and placing the string in it.
 function SetSolveArray(stringMaze) {
@@ -155,13 +160,14 @@ function SetSolveArray(stringMaze) {
  Solve();
 }
 
+
 //The function shows the best suggestion on screen according to current position.
 function Solve() {
  var movingAllowed, color, blue, min = 1000, distance, counter = 0, run = 1;
  //data about current place of image
  currI = parseInt(imageObj.style.left);
  currJ = parseInt(imageObj.style.top);
- var i,j, endI =(((endx - 430) / 40)), endJ = (((endy - 60) / 40) - 1);
+ var i,j, endI =(((endX - 430) / 40)), endJ = (((endY - 60) / 40) - 1);
  //cordinats of drawing a rec (left up point)
  var XL = currI - 80, YL = currJ;
  var XU = currI - 40, YU = currJ - 40;
